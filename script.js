@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const categoryCheckboxes = document.querySelectorAll('.filters input[name="category"]');
     const searchInput = document.getElementById('search-input');
     const filterAllCheckbox = document.getElementById('filter-all');
+    const sortBySelect = document.getElementById('sort-by');
+    const sortDescendingCheckbox = document.getElementById('sort-descending');
 
     function renderCards(dataToRender) {
         cardContainer.innerHTML = ''; // Clear current cards
@@ -15,7 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
         dataToRender.forEach(item => {
             const card = document.createElement('div');
             card.classList.add('etymology-card');
-             if (item.category === 'couplet') {
+            // Check if 'couplet' is one of the categories in the array
+             if (item.category && item.category.includes('couplet')) {
                  card.classList.add('couplet'); // Add class for couplet styling
              }
 
@@ -31,17 +34,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function filterData() {
+    function filterAndSortData() {
         const searchTerm = searchInput.value.toLowerCase();
         const selectedCategories = Array.from(categoryCheckboxes)
             .filter(checkbox => checkbox.checked && checkbox.value !== 'all')
             .map(checkbox => checkbox.value);
 
+        const sortBy = sortBySelect.value;
+        const sortDescending = sortDescendingCheckbox.checked;
+
         let filteredData = etymologyData;
 
-        // Apply category filter
+        // Apply category filter - UPDATED LOGIC
         if (selectedCategories.length > 0) {
-            filteredData = etymologyData.filter(item => selectedCategories.includes(item.category));
+             filteredData = etymologyData.filter(item =>
+                 item.category && selectedCategories.some(category => item.category.includes(category))
+             );
         } else if (!filterAllCheckbox.checked) {
             filteredData = [];
         }
@@ -54,7 +62,31 @@ document.addEventListener('DOMContentLoaded', () => {
             );
         }
 
-        renderCards(filteredData);
+        // --- Sorting Logic ---
+        let sortedData = filteredData;
+
+        if (sortBy === 'word') {
+            sortedData.sort((a, b) => {
+                const wordA = a.word.toLowerCase();
+                const wordB = b.word.toLowerCase();
+                if (wordA < wordB) return sortDescending ? 1 : -1;
+                if (wordA > wordB) return sortDescending ? -1 : 1;
+                return 0;
+            });
+        } else if (sortBy === 'year') {
+             sortedData.sort((a, b) => {
+                 // Basic numeric sort - handles empty years by treating as 0
+                 const yearA = parseInt(String(a.year).replace(/\D/g, '')) || 0; // Extract numbers
+                 const yearB = parseInt(String(b.year).replace(/\D/g, '')) || 0; // Extract numbers
+
+                 if (yearA < yearB) return sortDescending ? 1 : -1;
+                 if (yearA > yearB) return sortDescending ? -1 : 1;
+                 return 0;
+             });
+        }
+
+
+        renderCards(sortedData);
     }
 
      // Handle "All" checkbox logic
@@ -70,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
                  filterAllCheckbox.checked = true;
              }
         }
-        filterData();
+        filterAndSortData();
     });
 
     categoryCheckboxes.forEach(checkbox => {
@@ -83,15 +115,18 @@ document.addEventListener('DOMContentLoaded', () => {
                          filterAllCheckbox.checked = true;
                     }
                 }
-                filterData();
+                filterAndSortData();
             });
         }
     });
 
 
-    // Add event listeners for filtering
-    searchInput.addEventListener('input', filterData);
+    // Add event listeners for filtering and sorting
+    searchInput.addEventListener('input', filterAndSortData);
+    sortBySelect.addEventListener('change', filterAndSortData);
+    sortDescendingCheckbox.addEventListener('change', filterAndSortData);
+
 
     // Initial render
-    filterData();
+    filterAndSortData();
 });
