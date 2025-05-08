@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+
     const cardContainer = document.getElementById('etymology-card-container');
     const categoryCheckboxes = document.querySelectorAll('.filters input[name="category"]');
     const searchInput = document.getElementById('search-input');
