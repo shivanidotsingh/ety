@@ -1,49 +1,49 @@
 const etymologyData = [
     { word: "Ampersand", story: "Contraction of and per se and, meaning the character '&' by itself is 'and'. The symbol is based on the Latin word et \"and,\" and comes from an old Roman system of shorthand signs (ligatures)", year: "1797", category: [], imageUrl: "" },
-    { word: "Ammonia", story: "the gas obtained from sal ammoniac, salt deposits containing ammonium chloride found near temple of Jupiter Ammon in Libya", year: "1700s", category: ["proper-noun"], imageUrl: "https://images.nypl.org/index.php?id=81583&t=w" },
-    { word: "Bikini", story: "Named after Bikini Atoll, an island where an atom bomb was exploded in 1946 (because of the supposed ‘explosive’ effect the garment would create).", year: "1946", category: ["proper-noun"], imageUrl: "" },
-    { word: "Clue", story: "Revised spelling off clew (a ball of thread or yarn); Given by Ariadne to Theseus to use as a guide out of the Labyrinth in Greek mythology", year: "1590s", category: [], imageUrl: "" },
-    { word: "Curfew", story: "From cuevre, imperative of covrir (to cover) + feu (fire); The medieval practice of ringing a bell as an order to bank the hearths and prepare for sleep was to prevent conflagrations from untended fires.", year: "1300s", category: [], imageUrl: "" },
-    { word: "Jinx", story: "Probably a variant of jynx ‘wryneck’ because the bird was used in witchcraft.", year: "1690s", category: [], imageUrl: "" },
-    { word: "Hamburger", story: "Food stands along the New York City harbour served “steak cooked in the Hamburg style” to attract German sailors to American ports.", year: "1700s", category: ["proper-noun", "food"], imageUrl: "" }, // Category is now an array
-    { word: "Hysteria", story: "From Greek hystera (womb, uterus). Originally defined as a neurotic condition peculiar to women and thought to be caused by a dysfunction of the uterus.", year: "1801", category: [], imageUrl: "" },
-    { word: "Ketchup", story: "It might be from Tulu kajipu (curry) derived from kaje (to chew) OR from Malay kichap, a fish sauce, possibly from Chinese koechiap (brine of fish)", year: "", category: ["food"], imageUrl: "" }, // Category is now an array
-    { word: "Mandarin", story: "It was used to refer to a \"Chinese official,” Originally from Sanskrit ‘mantri’ - a minister, one who has wise words.", year: "1580s", category: [], imageUrl: "" },
-    { word: "Macabre", story: "From Old French, reference to a late medieval procession called ‘the dance of the Maccabees’ — The dance of death comes from vivid descriptions of the martyrdom of the Maccabees (leaders of the Jewish revolt against Syro-Hellenes) in the Apocryphal books.", year: "", category: ["proper-noun"], imageUrl: "" },
-    { word: "Muscle", story: "From Latin musculus literally (a little mouse) diminutive of mus (mouse). The shape and movement of some muscles (notably biceps) were thought to resemble mice.", year: "1300s", category: [], imageUrl: "" },
-    { word: "Nickname", story: "From Middle English nekename, alteration of earlier ekename (due to a <span style=\"text-decoration:underline;text-decoration-skip-ink:none;-webkit-text-decoration-skip:none;color:#1155cc;\"><a target=\"_blank\" href=\"https://en.wikipedia.org/wiki/Rebracketing\">rebracketing</a></span>); eke (additional) + name.", year: "", category: [], imageUrl: "" },
-    { word: "Pupil", story: "From Latin pūpilla (“pupil; little girl, doll”), named because of the small reflected image seen when looking into someone's eye.", year: "", category: [], imageUrl: "" },
-    { word: "Sabotage", story: "From French saboter (to literally \"walk noisily,\" from sabot \"wooden shoe\"); Reference to labor disputes", year: "1903", category: [], imageUrl: "" },
-    { word: "Sabbatical", story: "From Greek sabbatikos (of the Sabbath), a term perhaps suggested by the sabbatical year in Mosaic law, the seventh year, in which land was to remain untilled and non-foreign debtors and slaves released.", year: "1590s", category: [], imageUrl: "" },
-    { word: "Serendipity", story: "Coined by Horace Walpole, suggested by The Three Princes of Serendip, the title of a fairy tale in which the heroes ‘were always making discoveries, by accidents and sagacity, of things they were not in quest of’.", year: "1754", category: ["proper-noun"], imageUrl: "" },
-    { word: "Sinister", story: "From Latin sinister (left, on the left side) opposite of dexter", year: "", category: [], imageUrl: "" },
-    { word: "Tragedy", story: "From Greek tragos (goat, buck) + ōidē (song, ode). The connection with goats may be via satyric drama, from which tragedy later developed, in which actors or singers were dressed in goatskins to represent satyrs.", year: "1530s", category: [], imageUrl: "" },
-    { word: "Vernacular", story: "From verna (slave born in the master's house)", year: "", category: [], imageUrl: "" },
-    { word: "Vulgar", story: "From Latin vulgaris, from vulgus (common people)", year: "", category: [], imageUrl: "" },
+    { word: "Ammonia", story: "the gas obtained from sal ammoniac, salt deposits containing ammonium chloride found near temple of Jupiter Ammon in Libya (coined in scientific Latin 1782)", year: "1782", category: [], imageUrl: "https://images.nypl.org/index.php?id=81583&t=w" },
+    { word: "Bikini", story: "Named after Bikini Atoll, an island where an atom bomb was exploded in 1946 (coined 1947, after the test).", year: "1947", category: ["proper-noun"], imageUrl: "" },
+    { word: "Clue", story: "Revised spelling off clew (a ball of thread or yarn); Given by Ariadne to Theseus as a guide out of the Labyrinth. Spelling 'clue' first seen 1400s.", year: "1400s", category: [], imageUrl: "" },
+    { word: "Curfew", story: "From cuevre (to cover) + feu (fire); Medieval practice to bank hearths at a bell.", year: "1300s", category: [], imageUrl: "" },
+    { word: "Jinx", story: "Probably a variant of jynx ‘wryneck’ (bird used in witchcraft).", year: "1690s", category: [], imageUrl: "" },
+    { word: "Hamburger", story: "Food stands in NYC harbor served “steak cooked in the Hamburg style” to attract German sailors.", year: "1700s", category: ["proper-noun", "food"], imageUrl: "" },
+    { word: "Hysteria", story: "From Greek hystera (womb); Originally a neurotic condition peculiar to women thought caused by uterus dysfunction.", year: "1801", category: [], imageUrl: "" },
+    { word: "Ketchup", story: "Possibly from Tulu kajipu (curry) or Malay kichap (fish sauce). Term first appeared 1682.", year: "1682", category: ["food"], imageUrl: "" },
+    { word: "Mandarin", story: "Used for 'Chinese official,' from Sanskrit ‘mantri’ (minister).", year: "1580s", category: [], imageUrl: "" },
+    { word: "Macabre", story: "Reference to ‘the dance of the Maccabees’ (Jewish revolt leaders' martyrdom). Earliest use early 15c.", year: "1400s", category: ["proper-noun"], imageUrl: "" },
+    { word: "Muscle", story: "From Latin musculus (little mouse); Shape/movement of some muscles thought to resemble mice.", year: "1300s", category: [], imageUrl: "" },
+    { word: "Nickname", story: "From Middle English nekename, alteration of earlier ekename (additional name) attested 1303.", year: "1303", category: [], imageUrl: "" },
+    { word: "Pupil", story: "From Latin pūpilla (pupil, little girl); Named for small reflected image in the eye.", year: "", category: [], imageUrl: "" },
+    { word: "Sabotage", story: "From French saboter (to walk noisily, from sabot 'wooden shoe'); Reference to labor disputes.", year: "1903", category: [], imageUrl: "" },
+    { word: "Sabbatical", story: "From Greek sabbatikos (of the Sabbath); Suggested by sabbatical year in Mosaic law.", year: "1590s", category: [], imageUrl: "" },
+    { word: "Serendipity", story: "Coined by Horace Walpole, suggested by 'The Three Princes of Serendip' fairy tale.", year: "1754", category: ["proper-noun"], imageUrl: "" },
+    { word: "Sinister", story: "From Latin sinister (left, on the left side) opposite of dexter.", year: "", category: [], imageUrl: "" },
+    { word: "Tragedy", story: "From Greek tragos (goat) + ōidē (song); Connection with goats possibly via satyric drama.", year: "1530s", category: [], imageUrl: "" },
+    { word: "Vernacular", story: "From verna (slave born in the master's house).", year: "", category: [], imageUrl: "" },
+    { word: "Vulgar", story: "From Latin vulgaris, from vulgus (common people).", year: "", category: [], imageUrl: "" },
+    { word: "Volcano", story: "From Latin Vulcanus, Roman god of fire.", year: "", category: ["proper-noun"], imageUrl: "" },
 
-    // Couplets broken out
-    { word: "Helicopter", story: "Part of the couplet Helicopter and Pterodactyl. Greek: helico (spiral) + pter (one with wings)", year: "", category: ["couplet"], coupletId: "helicopter-pterodactyl", imageUrl: "" },
-    { word: "Pterodactyl", story: "Part of the couplet Helicopter and Pterodactyl. An extinct flying reptile: pter (one with wings) + dactylos (finger)", year: "", category: ["couplet"], coupletId: "helicopter-pterodactyl", imageUrl: "" },
-    { word: "Pomegranate", story: "Part of the couplet Pomegranate and Grenade. In Latin pomum granatum is an \"apple with many seeds.", year: "", category: ["couplet", "food"], coupletId: "pomegranate-grenade", imageUrl: "" }, // Category is now an array
-    { word: "Grenade", story: "Part of the couplet Pomegranate and Grenade. The weapon was so called because the many-seeded fruit suggested the powder-filled, fragmenting bomb, or from similarities of shape.", year: "", category: ["couplet", "food"], coupletId: "pomegranate-grenade", imageUrl: "" }, // Category is now an array
-    { word: "Orchids", story: "Part of the couplet Orchids and Avocado. From Greek órchis (testicle); Describes the appearance of plant's tubers.", year: "", category: ["couplet"], coupletId: "orchids-avocado", imageUrl: "" },
-    { word: "Avocado", story: "Part of the couplet Orchids and Avocado. Aguate, the Spanish word for avocados comes from a Nahuatl word meaning testicle.", year: "", category: ["couplet", "food"], coupletId: "orchids-avocado", imageUrl: "" }, // Category is now an array
-    { word: "Fungus", story: "Part of the couplet Fungus and Sponge. From Greek sphongos (sponge) the Attic form of spongos.", year: "", category: ["couplet"], coupletId: "fungus-sponge", imageUrl: "" },
-    { word: "Sponge", story: "Part of the couplet Fungus and Sponge. From Greek sphongos (sponge) the Attic form of spongos.", year: "", category: ["couplet"], coupletId: "fungus-sponge", imageUrl: "" },
-    { word: "Chaos", story: "Part of the couplet Chaos and Yawn. From Greek khaos (abyss, the void at the beginning of creation, the confused, formless state of the universe) root ghieh- to yawn, gape, be wide open.", year: "", category: ["couplet"], coupletId: "chaos-yawn", imageUrl: "" },
-    { word: "Yawn", story: "Part of the couplet Chaos and Yawn. From Greek khaos (abyss, the void at the beginning of creation, the confused, formless state of the universe) root ghieh- to yawn, gape, be wide open.", year: "", category: ["couplet"], coupletId: "chaos-yawn", imageUrl: "" },
-    { word: "Canvas", story: "Part of the couplet Canvas and Cannabis. From Old French chanevaz (canvas) literally \"made of hemp, hempen\".", year: "", category: ["couplet"], coupletId: "canvas-cannabis", imageUrl: "" },
-    { word: "Cannabis", story: "Part of the couplet Canvas and Cannabis. From Old French chanevaz (canvas) literally \"made of hemp, hempen\".", year: "", category: ["couplet"], coupletId: "canvas-cannabis", imageUrl: "" },
-    { word: "Gargoyle", story: "Part of the couplet Gargoyle and Gargle. From Old French gargole, gargoule (throat); perhaps from garg- (imitative of throat sounds)", year: "", category: ["couplet"], coupletId: "gargoyle-gargle", imageUrl: "" },
-    { word: "Gargle", story: "Part of the couplet Gargoyle and Gargle. From Old French gargole, gargoule (throat); perhaps from garg- (imitative of throat sounds) + goule, dialect word for \"mouth,\" from Latin gula (throat)", year: "", category: ["couplet"], coupletId: "gargoyle-gargle", imageUrl: "" },
+    // Unlikely Couples
+    { word: "Helicopter", story: "Part of the couplet Helicopter and Pterodactyl. Greek: helico (spiral) + pter (one with wings). Adopted from French 1861.", year: "1861", category: ["couplet"], coupletId: "helicopter-pterodactyl", imageUrl: "" },
+    { word: "Pterodactyl", story: "Part of the couplet Helicopter and Pterodactyl. An extinct flying reptile: pter (one with wings) + dactylos (finger).", year: "", category: ["couplet"], coupletId: "helicopter-pterodactyl", imageUrl: "" },
+    { word: "Pomegranate", story: "Part of the couplet Pomegranate and Grenade. Latin pomum granatum 'apple with many seeds'.", year: "", category: ["couplet", "food"], coupletId: "pomegranate-grenade", imageUrl: "" },
+    { word: "Grenade", story: "Part of the couplet Pomegranate and Grenade. Weapon named as it resembled the fruit. First English use 1590s.", year: "1590s", category: ["couplet", "food"], coupletId: "pomegranate-grenade", imageUrl: "" },
+    { word: "Orchids", story: "Part of the couplet Orchids and Avocado. Greek órchis (testicle); Describes appearance of plant's tubers. Term 'orchid' introduced 1845.", year: "1845", category: ["couplet"], coupletId: "orchids-avocado", imageUrl: "" },
+    { word: "Avocado", story: "Part of the couplet Orchids and Avocado. Spanish from Nahuatl meaning testicle. Name used in English since 1764.", year: "1764", category: ["couplet", "food"], coupletId: "orchids-avocado", imageUrl: "" },
+    { word: "Fungus", story: "Part of the couplet Fungus and Sponge. From Greek sphongos (sponge). Earliest noun use early 1500s (OED 1527).", year: "1527", category: ["couplet"], coupletId: "fungus-sponge", imageUrl: "" },
+    { word: "Sponge", story: "Part of the couplet Fungus and Sponge. From Greek sphongos (sponge).", year: "", category: ["couplet"], coupletId: "fungus-sponge", imageUrl: "" },
+    { word: "Chaos", story: "Part of the couplet Chaos and Yawn. Greek khaos (abyss). Used in English since late 14c.", year: "1300s", category: ["couplet"], coupletId: "chaos-yawn", imageUrl: "" },
+    { word: "Yawn", story: "Part of the couplet Chaos and Yawn. From Greek root ghieh- to yawn.", year: "", category: ["couplet"], coupletId: "chaos-yawn", imageUrl: "" },
+    { word: "Canvas", story: "Part of the couplet Canvas and Cannabis. Old French chanevaz (made of hemp). OED earliest evidence 1260.", year: "1260", category: ["couplet"], coupletId: "canvas-cannabis", imageUrl: "" },
+    { word: "Cannabis", story: "Part of the couplet Canvas and Cannabis. Neo-Latin botanical term 1728.", year: "1728", category: ["couplet"], coupletId: "canvas-cannabis", imageUrl: "" },
+    { word: "Gargoyle", story: "Part of the couplet Gargoyle and Gargle. Old French gargole (throat). Earliest use late 13c.", year: "1200s", category: ["couplet"], coupletId: "gargoyle-gargle", imageUrl: "" },
+    { word: "Gargle", story: "Part of the couplet Gargoyle and Gargle. Old French gargole (throat). Earliest use early 1500s (OED 1527).", year: "1527", category: ["couplet"], coupletId: "gargoyle-gargle", imageUrl: "" },
 
     // Proper Nouns
-    { word: "Bougainvillaea", story: "French navigator Louis Bougainville posthumously in 1849", year: "", category: ["proper-noun"], imageUrl: "" },
-    { word: "Dunce", story: "follower of John Duns Scotus (c. 1265-1308), Scottish scholar of philosophy and theology; By 1520s, humanist reaction against medieval theology had singled him out as the type of the hairsplitting scholastic and it became a general term applied to obstinate philosophical opponents", year: "", category: ["proper-noun"], imageUrl: "" },
-    { word: "Luddite", story: "The name taken by an organized band of weavers in Midlands and northern England who for about 5 years thereafter destroyed machinery, for fear it would deprive them of work. Supposedly they got it from Ned Ludd, a Leicestershire worker who in 1779 had smashed two machines in a rage", year: "", category: ["proper-noun"], imageUrl: "" },
-    { word: "Sadism", story: "From Count Donatien A.F. de Sade (1740-1815). He was notorious for the cruel sexual practices described in his novels.", year: "", category: ["proper-noun"], imageUrl: "" },
-    { word: "Masochism", story: "From Leopold von Sacher-Masoch (1836-1895), Austrian utopian socialist novelist who enshrined his submissive sexuality in \"Venus in Furs\" (1869)", year: "", category: ["proper-noun"], imageUrl: "" },
-    { word: "Sandwich", story: "Earl of Sandwich, who was said to be a gambler who ate thin slices of cold meat between bread at the gaming table during marathon sessions rather than rising for a proper meal", year: "", category: ["proper-noun", "food"], imageUrl: "" }, // Category is now an array
-    { word: "Nachos", story: "Restaurant cook Ignacio Anaya, who invented the dish in the Mexican border town of Piedras Negras in 1943.", year: "1943", category: ["proper-noun", "food"], imageUrl: "" }, // Category is now an array
-    { word: "Volcano", story: "From Latin Vulcanus \"Vulcan,\" Roman god of fire", year: "", category: ["proper-noun"], imageUrl: "" }
+    { word: "Bougainvillaea", story: "French navigator Louis Bougainville posthumously in 1849.", year: "1849", category: ["proper-noun"], imageUrl: "" },
+    { word: "Dunce", story: "Follower of John Duns Scotus. Term used for those rejecting new knowledge by 1530.", year: "1530", category: ["proper-noun"], imageUrl: "" },
+    { word: "Luddite", story: "Name taken by weavers who destroyed machinery, from Ned Ludd. Name occurs in writings by 1811.", year: "1811", category: ["proper-noun"], imageUrl: "" },
+    { word: "Sadism", story: "From Count Donatien A.F. de Sade. Term coined in 1886.", year: "1886", category: ["proper-noun"], imageUrl: "" },
+    { word: "Masochism", story: "From Leopold von Sacher-Masoch. Term coined in 1886.", year: "1886", category: ["proper-noun"], imageUrl: "" },
+    { word: "Sandwich", story: "Named after the Earl of Sandwich, who ate meat between bread while gambling.", year: "", category: ["proper-noun", "food"], imageUrl: "" }
+    
 ];
