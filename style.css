@@ -82,7 +82,7 @@ header h1 {
 /* Card Container */
 .card-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive grid */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Reduced minimum width for smaller cards */
     gap: 20px; /* Space between cards */
     padding: 20px; /* Padding around the grid */
 }
@@ -105,10 +105,10 @@ header h1 {
 
 .card-image {
     width: 100%;
-    height: 200px; /* Fixed height for images (adjust as needed) */
+    height: 250px; /* Increased height relative to a potentially smaller width for portrait */
     object-fit: cover; /* Cover the area without distorting aspect ratio */
+    object-position: top; /* Align image to the top */
     background-color: #eee; /* Placeholder background if no image */
-    object-position: top;
 }
 
 .card-content {
@@ -117,29 +117,28 @@ header h1 {
 }
 
 .card-word {
-    font-size: 1.3em;
+    font-size: 1.2em; /* Slightly smaller font for word */
     font-weight: bold;
     color: #356854; /* Green color for the word */
     margin-top: 0;
-    margin-bottom: 10px;
+    margin-bottom: 8px; /* Reduced margin */
 }
 
 .card-story {
-    font-size: 1em;
-    margin-bottom: 10px;
+    font-size: 0.95em; /* Slightly smaller font for story */
+    margin-bottom: 8px; /* Reduced margin */
     color: #555;
     white-space: pre-wrap; /* Preserve line breaks in story */
 }
 
 .card-year {
-    font-size: 0.9em;
+    font-size: 0.85em; /* Smaller font for year */
     color: #777;
     text-align: right; /* Align year to the right */
     margin-top: auto; /* Pushes year to the bottom if content varies */
 }
 
 /* Styling for couplet cards - optional, can add visual cues */
-/* For example, a different border or background */
 .etymology-card.couplet {
     border-left: 5px solid #356854; /* Highlight couplet cards */
 }
@@ -150,4 +149,5 @@ header h1 {
     font-style: italic;
     color: #777;
     padding: 20px;
+    grid-column: 1 / -1; /* Center "No results" across grid columns */
 }
