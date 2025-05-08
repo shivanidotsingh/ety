@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ety</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Unexpected Etymologies</h1>
+
+    <div class="filters">
+        <label for="category-filter">Filter by Category:</label>
+        <select id="category-filter">
+            <option value="all">All</option>
+            <option value="couplet">Couplets</option>
+            <option value="proper-noun">Proper Nouns</option>
+            <option value="folk-etymology">Folk Etymologies</option>
+        </select>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Word</th>
+                <th>Story</th>
+                <th>Year</th>
+            </tr>
+        </thead>
+        <tbody id="etymology-table-body">
+            </tbody>
+    </table>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
