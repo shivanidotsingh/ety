@@ -3,22 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ety</title>
+    <title>The Etymology Project</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Unexpected Etymologies</h1>
+    <h1>⛳</h1>
 
-    <div class="filters">
-        <label for="category-filter">Filter by Category:</label>
-        <select id="category-filter">
-            <option value="all">All</option>
-            <option value="couplet">Couplets</option>
-            <option value="proper-noun">Proper Nouns</option>
-            <option value="folk-etymology">Folk Etymologies</option>
-        </select>
+    <div class="controls">
+        <div class="search-bar">
+            <label for="search-input">Search:</label>
+            <input type="text" id="search-input" placeholder="Search words or stories...">
+        </div>
+
+        <div class="filters">
+            <span>Filter by Category:</span>
+            <label>
+                <input type="checkbox" name="category" value="couplet"> Couplets
+            </label>
+            <label>
+                <input type="checkbox" name="category" value="proper-noun"> Proper Nouns
+            </label>
+            <label>
+                <input type="checkbox" name="category" value="folk-etymology"> Folk Etymologies
+            </label>
+             <label>
+                <input type="checkbox" name="category" value="all" id="filter-all" checked> All
+            </label>
+        </div>
     </div>
+
 
     <table>
         <thead>
