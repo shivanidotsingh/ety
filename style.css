@@ -108,6 +108,7 @@ header h1 {
     height: 200px; /* Fixed height for images (adjust as needed) */
     object-fit: cover; /* Cover the area without distorting aspect ratio */
     background-color: #eee; /* Placeholder background if no image */
+    vertical-align: top;
 }
 
 .card-content {
