@@ -1,58 +1,37 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const tableBody = document.getElementById('etymology-table-body');
+    const cardContainer = document.getElementById('etymology-card-container');
     const categoryCheckboxes = document.querySelectorAll('.filters input[name="category"]');
     const searchInput = document.getElementById('search-input');
     const filterAllCheckbox = document.getElementById('filter-all');
 
-    function renderTable(dataToRender, isCoupletFilteredOnly) {
-        tableBody.innerHTML = ''; // Clear current table body
+    function renderCards(dataToRender) {
+        cardContainer.innerHTML = ''; // Clear current cards
 
-        if (isCoupletFilteredOnly) {
-             // Group couplets by coupletId when ONLY couplets filter is active
-            const coupletsGrouped = dataToRender.reduce((acc, item) => {
-                (acc[item.coupletId] = acc[item.coupletId] || []).push(item);
-                return acc;
-            }, {});
-
-            let index = 1; // Initialize index for grouped couplets
-            // Render grouped couplets
-            for (const coupletId in coupletsGrouped) {
-                const coupletEntries = coupletsGrouped[coupletId];
-                const row = document.createElement('tr');
-                row.classList.add('couplet-group'); // Add class for styling
-                row.innerHTML = `
-                    <td class="index-column">${index++}</td>
-                    <td>${coupletEntries.map(c => c.word).join(' and ')}</td>
-                    <td>${coupletEntries.map(c => c.story).join('<br><br>')}</td>
-                    <td>${coupletEntries.map(c => c.year || '').filter(Boolean).join(', ')}</td>
-                `;
-                tableBody.appendChild(row);
-            }
-
-        } else {
-            // Render all other filtered entries individually
-            dataToRender.forEach((item, index) => { // Added index for numbering
-                const row = document.createElement('tr');
-                 // Do not add couplet-group class for individual display
-                row.innerHTML = `
-                    <td class="index-column">${index + 1}</td>
-                    <td>${item.word}</td>
-                    <td>${item.story}</td>
-                    <td>${item.year || ''}</td>
-                `;
-                tableBody.appendChild(row);
-            });
+        if (dataToRender.length === 0) {
+            cardContainer.innerHTML = '<div class="no-results">No results found.</div>';
+            return;
         }
-         // Show "No results" if table is empty
-        if (tableBody.children.length === 0) {
-            const noResultsRow = document.createElement('tr');
-            noResultsRow.classList.add('no-results');
-            noResultsRow.innerHTML = `<td colspan="4" style="text-align: center;">No results found.</td>`; // colspan is 4 now due to index column
-            tableBody.appendChild(noResultsRow);
-        }
+
+        dataToRender.forEach(item => {
+            const card = document.createElement('div');
+            card.classList.add('etymology-card');
+             if (item.category === 'couplet') {
+                 card.classList.add('couplet'); // Add class for couplet styling
+             }
+
+            card.innerHTML = `
+                ${item.imageUrl ? `<img src="${item.imageUrl}" alt="Visual for ${item.word}" class="card-image">` : '<div class="card-image"></div>'}
+                <div class="card-content">
+                    <h3 class="card-word">${item.word}</h3>
+                    <p class="card-story">${item.story}</p>
+                    <p class="card-year">${item.year || ''}</p>
+                </div>
+            `;
+            cardContainer.appendChild(card);
+        });
     }
 
-    function filterTable() {
+    function filterData() {
         const searchTerm = searchInput.value.toLowerCase();
         const selectedCategories = Array.from(categoryCheckboxes)
             .filter(checkbox => checkbox.checked && checkbox.value !== 'all')
@@ -64,10 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (selectedCategories.length > 0) {
             filteredData = etymologyData.filter(item => selectedCategories.includes(item.category));
         } else if (!filterAllCheckbox.checked) {
-             // If no specific categories are selected and "All" is not checked, show nothing
             filteredData = [];
         }
-        // If no specific categories are selected and "All" is checked, all data is already in filteredData
 
         // Apply search filter
         if (searchTerm) {
@@ -77,14 +54,10 @@ document.addEventListener('DOMContentLoaded', () => {
             );
         }
 
-         // Determine if ONLY couplets are filtered
-        const isCoupletFilteredOnly = selectedCategories.length === 1 && selectedCategories[0] === 'couplet' && !searchTerm;
-
-
-        renderTable(filteredData, isCoupletFilteredOnly);
+        renderCards(filteredData);
     }
 
-    // Handle "All" checkbox logic
+     // Handle "All" checkbox logic
     filterAllCheckbox.addEventListener('change', () => {
         if (filterAllCheckbox.checked) {
             categoryCheckboxes.forEach(checkbox => {
@@ -93,12 +66,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         } else {
-             // If "All" is unchecked, and no other are checked, check "All" back
              if (Array.from(categoryCheckboxes).filter(cb => cb.checked && cb.value !== 'all').length === 0) {
                  filterAllCheckbox.checked = true;
              }
         }
-        filterTable();
+        filterData();
     });
 
     categoryCheckboxes.forEach(checkbox => {
@@ -107,21 +79,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (checkbox.checked) {
                     filterAllCheckbox.checked = false;
                 } else {
-                    // If no specific categories are checked, check "All"
                     if (Array.from(categoryCheckboxes).filter(cb => cb.checked && cb.value !== 'all').length === 0) {
                          filterAllCheckbox.checked = true;
                     }
                 }
-                filterTable();
+                filterData();
             });
         }
     });
 
 
     // Add event listeners for filtering
-    searchInput.addEventListener('input', filterTable);
-    // Event listeners for category checkboxes are added above
+    searchInput.addEventListener('input', filterData);
 
     // Initial render
-    filterTable();
+    filterData();
 });
