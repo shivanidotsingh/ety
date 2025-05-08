@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif; /* You can replace with the specific font from your other site if not sans-serif */
+    transition: background-color 0.5s ease, color 0.5s ease; /* Smooth color transition */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    text-align: left;
+    background-color: #f4f4f4; /* Default background */
+    color: #333; /* Default text color */
+}
+
+.container {
+    max-width: 700px; /* Adjust max width as needed */
+    padding: 20px;
+    margin: auto; /* Center the container */
+}
+
+#word-display {
+    font-size: clamp(2.5rem, 6vw, 4rem); /* Responsive font size for the word */
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+#story-display {
+    font-size: 1.2em; /* Readable font size for the story */
+    margin-bottom: 15px;
+    line-height: 1.6;
+    white-space: pre-wrap; /* Preserve line breaks */
+}
+
+#year-display {
+    font-size: 1em;
+    margin-bottom: 20px;
+    color: #777; /* Muted color for the year */
+}
+
+#image-display {
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below image */
+    margin-bottom: 20px;
+    border-radius: 8px; /* Match card styling */
+}
+
+#next-etymology-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem; /* Match button size from reference */
+    font-weight: bold;
+    color: inherit; /* Inherit text color from body */
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+    margin-top: 20px;
+    transition: color 0.3s ease;
+    text-align: left;
+}
+
+#next-etymology-button:hover {
+    opacity: 0.7;
+}
