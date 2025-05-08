@@ -21,7 +21,12 @@ const etymologyData = [
     
     { word: "Mandarin", story: "It was used to refer to a \"Chinese official,” Originally from Sanskrit ‘mantri’ - a minister, one who has wise words.", year: "1580s", category: "", imageUrl: "" },
     
-    { word: "Macabre", story: "From Old French, reference to a late medieval procession called ‘the dance of the Maccabees’ — The dance of death comes from vivid descriptions of the martyrdom of the Maccabees (leaders of the Jewish revolt against Syro-Hellenes) in the Apocryphal books.", year: "", category: "proper-noun", imageUrl: "" },
+    { word: "Macabre", story: "From Old French, reference to a late medieval procession called ‘the dance of the Maccabees’ — The dance of death comes from vivid descriptions of the martyrdom of the Maccabees (leaders of the Jewish revolt against Syro-Hellenes) in the Apocryphal books.",
+     year: "", category: "proper-noun", imageUrl: "" },
+
+   /* { word: "Maccabees",
+     story: "According to Jewish folklore, the name Maccabee is an acronym of the verse Mi kamokha ba'elim Adonai (YHWH), 'Who is like you, O God, among the gods that are worshiped?', the Maccabean battle-cry to motivate troops (Exodus 15:11) as well as a part of daily Jewish prayers. Some scholars maintain that the name is a shortened form of the Hebrew maqqab-Yahu (from naqab, 'to mark, to designate'), meaning 'the one designated by God.' Although contextualized as a modern-day 'surname' (Jews didn't start having surnames until the Middle Ages) exclusive to Judah, Maccabee came to signify all the Hasmoneans who fought during the Maccabean revolt.",
+     year: "", category: "proper-noun", imageUrl: "" },*/
     
     { word: "Muscle", story: "From Latin musculus literally (a little mouse) diminutive of mus (mouse). The shape and movement of some muscles (notably biceps) were thought to resemble mice.", year: "1300s", category: "", imageUrl: "" },
     
