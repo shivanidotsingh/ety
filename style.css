@@ -1,69 +1,92 @@
 body {
     font-family: sans-serif;
     line-height: 1.6;
-    margin: 20px;
-    background-color: #f4f4f4;
+    margin: 0; /* Remove default body margin */
+    background-color: #f4f4f4; /* Light background */
     color: #333;
+    padding: 20px; /* Add some padding around the content */
 }
 
 h1 {
-    color: #356854;
+    color: #356854; /* Dark teal/green color */
     text-align: left;
     margin-bottom: 20px;
 }
 
-.filters {
+.controls {
     margin-bottom: 20px;
+    padding: 0 15px; /* Align controls padding with table content */
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    gap: 20px; /* Space between search and filters */
+    align-items: center; /* Vertically align items */
+}
+
+.search-bar label,
+.filters span {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.search-bar input[type="text"] {
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 .filters label {
-    margin-right: 10px;
-    font-weight: bold;
-}
-
-#category-filter {
-    padding: 5px;
-    font-size: 1rem;
+    margin-right: 15px; /* Space between checkboxes */
 }
 
 table {
     border-collapse: collapse;
     width: 100%;
-    background-color: #fff;
+    background-color: #fff; /* White background for table */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: left; /* Ensure left alignment for table content */
+    text-align: left;
+    border: 1px solid #356854; /* Border color from the example's theme */
+    margin-top: 20px; /* Space above the table */
+}
+
+thead tr {
+    background-color: #356854; /* Header background color */
+    color: #ffffff; /* Header text color */
 }
 
 th, td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #ddd;
-    text-align: left; /* Ensure left alignment for table content */
+    padding: 12px 15px; /* Increased padding for better spacing */
+    border-bottom: 1px solid #ddd; /* Lighter border for rows */
+    text-align: left;
 }
 
 th {
-    background-color: #356854;
-    color: #ffffff;
     font-weight: bold;
-    text-align: left; /* Ensure left alignment for headers */
 }
 
-tr:nth-child(even) {
-    background-color: #f9f9f9;
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Zebra striping for rows */
 }
 
-tr:hover {
-    background-color: #e9e9e9;
+tbody tr:hover {
+    background-color: #e9e9e9; /* Hover background color */
+    transition: background-color 0.2s ease; /* Smooth hover transition */
 }
 
 /* Ensure text is readable and well-spaced */
 td {
-    font-size: 1.1rem;
+    font-size: 1.1rem; /* Slightly larger text */
     word-wrap: break-word;
+    vertical-align: top; /* Align text to the top in cells */
 }
 
-/* Optional: Adjust column widths if needed */
-/*
-td:nth-child(1) { width: 15%; }
-td:nth-child(2) { width: 70%; }
-td:nth-child(3) { width: 15%; }
-*/
+/* Style for grouped couplet row when ONLY couplets are filtered */
+.couplet-group td {
+    background-color: #e0f2f1; /* Light background for couplet groups */
+    border-bottom: 2px solid #356854; /* Thicker border below the group */
+}
+
+/* Adjust spacing for the story in couplets */
+.couplet-group td:nth-child(2) {
+    white-space: pre-wrap; /* Allow story text to wrap and respect line breaks */
+}
