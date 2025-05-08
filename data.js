@@ -1,24 +1,46 @@
 const etymologyData = [
-    { word: "Ampersand", story: "Contraction of and per se and, meaning the character '&' by itself is 'and'. The symbol is based on the Latin word et \"and,\" and comes from an old Roman system of shorthand signs (ligatures)", year: "1797", category: "", imageUrl: "" },
-    { word: "Ammonia", story: "the gas obtained from sal ammoniac, salt deposits containing ammonium chloride found near temple of Jupiter Ammon in Libya", year: "", category: "", imageUrl: "" },
-    { word: "Bikini", story: "Named after Bikini Atoll, an island where an atom bomb was exploded in 1946 (because of the supposed ‘explosive’ effect the garment would create).", year: "", category: "proper-noun", imageUrl: "" },
-    { word: "Clue", story: "Revised spelling off clew (a ball of thread or yarn); Given by Ariadne to Theseus to use as a guide out of the Labyrinth in Greek mythology", year: "", category: "", imageUrl: "" },
-    { word: "Curfew", story: "From cuevre, imperative of covrir (to cover) + feu (fire); The medieval practice of ringing a bell as an order to bank the hearths and prepare for sleep was to prevent conflagrations from untended fires.", year: "1300s", category: "", imageUrl: "" },
+    { word: "Ampersand", story: "Contraction of and per se and, meaning the character '&' by itself is 'and'. The symbol is based on the Latin word et \"and,\" and comes from an old Roman system of shorthand signs (ligatures)",
+     year: "1797", category: "", imageUrl: "" },
+    { word: "Ammonia", story: "the gas obtained from sal ammoniac, salt deposits containing ammonium chloride found near temple of Jupiter Ammon in Libya",
+     year: "", category: "", imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Kingdoms_around_Israel_830_map.svg/1920px-Kingdoms_around_Israel_830_map.svg.png" },
+    { word: "Bikini", story: "Named after Bikini Atoll, an island where an atom bomb was exploded in 1946 (because of the supposed ‘explosive’ effect the garment would create).",
+     year: "", category: "proper-noun", imageUrl: "https://upload.wikimedia.org/wikipedia/commons/9/94/Bikini_Atoll_2001-01-14%2C_Landsat_7_ETM%2B%2C_bands_3-2-1-8.png" },
+    { word: "Clue", story: "Revised spelling off clew (a ball of thread or yarn); Given by Ariadne to Theseus to use as a guide out of the Labyrinth in Greek mythology",
+     year: "", category: "", imageUrl: "" },
+    { word: "Curfew", story: "From cuevre, imperative of covrir (to cover) + feu (fire); The medieval practice of ringing a bell as an order to bank the hearths and prepare for sleep was to prevent conflagrations from untended fires.",
+     year: "1300s", category: "", imageUrl: "" },
+    
     { word: "Jinx", story: "Probably a variant of jynx ‘wryneck’ because the bird was used in witchcraft.", year: "1690s", category: "", imageUrl: "" },
-    { word: "Hamburger", story: "Food stands along the New York City harbour served “steak cooked in the Hamburg style” to attract German sailors to American ports.", year: "1700s", category: "proper-noun", imageUrl: "" },
-    { word: "Hysteria", story: "From Greek hystera (womb, uterus). Originally defined as a neurotic condition peculiar to women and thought to be caused by a dysfunction of the uterus.", year: "1801", category: "", imageUrl: "" },
+    { word: "Hamburger", story: "Food stands along the New York City harbour served “steak cooked in the Hamburg style” to attract German sailors to American ports.",
+     year: "1700s", category: "proper-noun", imageUrl: "https://hoodmaps.com/assets/maps/hamburg-neighborhood-map.png" },
+    
+    { word: "Hysteria", story: "From Greek hystera (womb, uterus). Originally defined as a neurotic condition peculiar to women and thought to be caused by a dysfunction of the uterus.",
+     year: "1801", category: "", imageUrl: "" },
+    
     { word: "Ketchup", story: "It might be from Tulu kajipu (curry) derived from kaje (to chew) OR from Malay kichap, a fish sauce, possibly from Chinese koechiap (brine of fish)", year: "", category: "", imageUrl: "" },
+    
     { word: "Mandarin", story: "It was used to refer to a \"Chinese official,” Originally from Sanskrit ‘mantri’ - a minister, one who has wise words.", year: "1580s", category: "", imageUrl: "" },
+    
     { word: "Macabre", story: "From Old French, reference to a late medieval procession called ‘the dance of the Maccabees’ — The dance of death comes from vivid descriptions of the martyrdom of the Maccabees (leaders of the Jewish revolt against Syro-Hellenes) in the Apocryphal books.", year: "", category: "proper-noun", imageUrl: "" },
+    
     { word: "Muscle", story: "From Latin musculus literally (a little mouse) diminutive of mus (mouse). The shape and movement of some muscles (notably biceps) were thought to resemble mice.", year: "1300s", category: "", imageUrl: "" },
+    
     { word: "Nickname", story: "From Middle English nekename, alteration of earlier ekename (due to a <span style=\"text-decoration:underline;text-decoration-skip-ink:none;-webkit-text-decoration-skip:none;color:#1155cc;\"><a target=\"_blank\" href=\"https://en.wikipedia.org/wiki/Rebracketing\">rebracketing</a></span>); eke (additional) + name.", year: "", category: "", imageUrl: "" },
+    
     { word: "Pupil", story: "From Latin pūpilla (“pupil; little girl, doll”), named because of the small reflected image seen when looking into someone's eye.", year: "", category: "", imageUrl: "" },
+    
     { word: "Sabotage", story: "From French saboter (to literally \"walk noisily,\" from sabot \"wooden shoe\"); Reference to labor disputes", year: "1903", category: "", imageUrl: "" },
+    
     { word: "Sabbatical", story: "From Greek sabbatikos (of the Sabbath), a term perhaps suggested by the sabbatical year in Mosaic law, the seventh year, in which land was to remain untilled and non-foreign debtors and slaves released.", year: "1590s", category: "", imageUrl: "" },
+    
     { word: "Serendipity", story: "Coined by Horace Walpole, suggested by The Three Princes of Serendip, the title of a fairy tale in which the heroes ‘were always making discoveries, by accidents and sagacity, of things they were not in quest of’.", year: "1754", category: "proper-noun", imageUrl: "" },
+    
     { word: "Sinister", story: "From Latin sinister (left, on the left side) opposite of dexter", year: "", category: "", imageUrl: "" },
+    
     { word: "Tragedy", story: "From Greek tragos (goat, buck) + ōidē (song, ode). The connection with goats may be via satyric drama, from which tragedy later developed, in which actors or singers were dressed in goatskins to represent satyrs.", year: "1530s", category: "", imageUrl: "" },
+    
     { word: "Vernacular", story: "From verna (slave born in the master's house)", year: "", category: "", imageUrl: "" },
+    
     { word: "Vulgar", story: "From Latin vulgaris, from vulgus (common people)", year: "", category: "", imageUrl: "" },
 
     // Couplets
@@ -38,19 +60,27 @@ const etymologyData = [
     { word: "Gargle", story: "From Old French gargole, gargoule (throat); perhaps from garg- (imitative of throat sounds) + goule, dialect word for \"mouth,\" from Latin gula (throat)", year: "", category: "couplet", coupletId: "gargoyle-gargle", imageUrl: "" },
 
     // Proper Nouns
-    { word: "Bougainvillaea", story: "French navigator Louis Bougainville posthumously in 1849", year: "", category: "proper-noun", imageUrl: "https://upload.wikimedia.org/wikipedia/commons/1/1f/Ducreux_-_Louis_Antoine_de_Bougainville.jpg" },
+    { word: "Bougainvillaea", story: "French navigator Louis Bougainville posthumously in 1849",
+     year: "", category: "proper-noun", imageUrl: "https://upload.wikimedia.org/wikipedia/commons/1/1f/Ducreux_-_Louis_Antoine_de_Bougainville.jpg" },
+    
     { word: "Dunce", story: "follower of John Duns Scotus (c. 1265-1308), Scottish scholar of philosophy and theology; By 1520s, humanist reaction against medieval theology had singled him out as the type of the hairsplitting scholastic and it became a general term applied to obstinate philosophical opponents",
      year: "", category: "proper-noun", imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Scoto_%28Duns_Scoto%29.jpg/1024px-Scoto_%28Duns_Scoto%29.jpg" },
+    
     { word: "Luddite", story: "The name taken by an organized band of weavers in Midlands and northern England who for about 5 years thereafter destroyed machinery, for fear it would deprive them of work. Supposedly they got it from Ned Ludd, a Leicestershire worker who in 1779 had smashed two machines in a rage",
      year: "", category: "proper-noun", imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Luddite.jpg/1280px-Luddite.jpg" },
+    
     { word: "Sadism", story: "From Count Donatien A.F. de Sade (1740-1815). He was notorious for the cruel sexual practices described in his novels.",
      year: "", category: "proper-noun", imageUrl: "https://cdn.britannica.com/58/66758-050-7A02462F/Marquis-de-Sade.jpg" },
+    
     { word: "Masochism", story: "From Leopold von Sacher-Masoch (1836-1895), Austrian utopian socialist novelist who enshrined his submissive sexuality in \"Venus in Furs\" (1869)",
      year: "", category: "proper-noun", imageUrl: "https://upload.wikimedia.org/wikipedia/commons/7/72/Leopold_von_Sacher-Masoch%2C_portrait_3.jpg" },
+    
     { word: "Sandwich", story: "Earl of Sandwich, who was said to be a gambler who ate thin slices of cold meat between bread at the gaming table during marathon sessions rather than rising for a proper meal",
-     year: "", category: "proper-noun", imageUrl: "" },
+     year: "", category: "proper-noun", imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/John_Montagu%2C_4th_Earl_of_Sandwich.jpg/1024px-John_Montagu%2C_4th_Earl_of_Sandwich.jpg" },
+    
     { word: "Nachos", story: "Restaurant cook Ignacio Anaya, who invented the dish in the Mexican border town of Piedras Negras in 1943.",
      year: "1943", category: "proper-noun", imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Ignacio_Anaya_Inventor_of_Nachos.jpg/1280px-Ignacio_Anaya_Inventor_of_Nachos.jpg" },
+    
     { word: "Volcano", story: "From Latin Vulcanus \"Vulcan,\" Roman god of fire",
      year: "", category: "proper-noun", imageUrl: "https://api.nga.gov/iiif/47133e8d-e227-4e32-a69c-8a62775b2c72/full/!800,800/0/default.jpg" }
 ];
