@@ -14,12 +14,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 return acc;
             }, {});
 
+            let index = 1; // Initialize index for grouped couplets
             // Render grouped couplets
             for (const coupletId in coupletsGrouped) {
                 const coupletEntries = coupletsGrouped[coupletId];
                 const row = document.createElement('tr');
                 row.classList.add('couplet-group'); // Add class for styling
                 row.innerHTML = `
+                    <td class="index-column">${index++}</td>
                     <td>${coupletEntries.map(c => c.word).join(' and ')}</td>
                     <td>${coupletEntries.map(c => c.story).join('<br><br>')}</td>
                     <td>${coupletEntries.map(c => c.year || '').filter(Boolean).join(', ')}</td>
@@ -29,10 +31,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         } else {
             // Render all other filtered entries individually
-            dataToRender.forEach(item => {
+            dataToRender.forEach((item, index) => { // Added index for numbering
                 const row = document.createElement('tr');
                  // Do not add couplet-group class for individual display
                 row.innerHTML = `
+                    <td class="index-column">${index + 1}</td>
                     <td>${item.word}</td>
                     <td>${item.story}</td>
                     <td>${item.year || ''}</td>
@@ -43,7 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
          // Show "No results" if table is empty
         if (tableBody.children.length === 0) {
             const noResultsRow = document.createElement('tr');
-            noResultsRow.innerHTML = `<td colspan="3" style="text-align: center;">No results found.</td>`;
+            noResultsRow.classList.add('no-results');
+            noResultsRow.innerHTML = `<td colspan="4" style="text-align: center;">No results found.</td>`; // colspan is 4 now due to index column
             tableBody.appendChild(noResultsRow);
         }
     }
@@ -88,6 +92,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     checkbox.checked = false;
                 }
             });
+        } else {
+             // If "All" is unchecked, and no other are checked, check "All" back
+             if (Array.from(categoryCheckboxes).filter(cb => cb.checked && cb.value !== 'all').length === 0) {
+                 filterAllCheckbox.checked = true;
+             }
         }
         filterTable();
     });
