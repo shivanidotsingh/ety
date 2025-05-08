@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
     const cardContainer = document.getElementById('etymology-card-container');
     const categoryCheckboxes = document.querySelectorAll('.filters input[name="category"]');
     const searchInput = document.getElementById('search-input');
@@ -18,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         dataToRender.forEach(item => {
             const card = document.createElement('div');
             card.classList.add('etymology-card');
-            // Check if 'couplet' is one of the categories in the array
+             // Assuming item.category is an array
              if (item.category && item.category.includes('couplet')) {
                  card.classList.add('couplet'); // Add class for couplet styling
              }
@@ -44,12 +43,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const sortBy = sortBySelect.value;
         const sortDescending = sortDescendingCheckbox.checked;
 
+
         let filteredData = etymologyData;
 
-        // Apply category filter - UPDATED LOGIC
+        // Apply category filter
         if (selectedCategories.length > 0) {
              filteredData = etymologyData.filter(item =>
-                 item.category && selectedCategories.some(category => item.category.includes(category))
+                // Assuming item.category is an array and checking if any selected category is in it
+                item.category && selectedCategories.some(category => item.category.includes(category))
              );
         } else if (!filterAllCheckbox.checked) {
             filteredData = [];
@@ -63,11 +64,12 @@ document.addEventListener('DOMContentLoaded', () => {
             );
         }
 
-        // --- Sorting Logic ---
-        let sortedData = filteredData;
-
-        if (sortBy === 'word') {
-            sortedData.sort((a, b) => {
+        // Apply Sorting Logic
+        if (sortBy === 'random') {
+            // Shuffle the filtered data randomly
+            filteredData.sort(() => Math.random() - 0.5);
+        } else if (sortBy === 'word') {
+            filteredData.sort((a, b) => {
                 const wordA = a.word.toLowerCase();
                 const wordB = b.word.toLowerCase();
                 if (wordA < wordB) return sortDescending ? 1 : -1;
@@ -75,10 +77,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 return 0;
             });
         } else if (sortBy === 'year') {
-             sortedData.sort((a, b) => {
-                 // Basic numeric sort - handles empty years by treating as 0
-                 const yearA = parseInt(String(a.year).replace(/\D/g, '')) || 0; // Extract numbers
-                 const yearB = parseInt(String(b.year).replace(/\D/g, '')) || 0; // Extract numbers
+             // Custom sort for years, handling potential non-numeric values and 's'
+             filteredData.sort((a, b) => {
+                 const yearA = parseYear(a.year);
+                 const yearB = parseYear(b.year);
 
                  if (yearA < yearB) return sortDescending ? 1 : -1;
                  if (yearA > yearB) return sortDescending ? -1 : 1;
@@ -87,8 +89,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
 
-        renderCards(sortedData);
+        renderCards(filteredData);
     }
+
+    // Helper function to parse year strings (handles '1300s', empty strings, etc.)
+    function parseYear(yearString) {
+        if (!yearString) return 0; // Treat empty years as very old (or you could treat as very new)
+        // Extract leading digits for sorting
+        const yearMatch = yearString.match(/^\d+/);
+        return yearMatch ? parseInt(yearMatch[0]) : 0;
+    }
+
 
      // Handle "All" checkbox logic
     filterAllCheckbox.addEventListener('change', () => {
