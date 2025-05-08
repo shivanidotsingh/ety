@@ -123,6 +123,8 @@ header h1 {
 .card-content {
     padding: 15px;
     flex-grow: 1; /* Allows content to take up remaining space */
+    position: relative; /* Added for positioning the year tag */
+    padding-bottom: 35px; /* Add padding at the bottom to make space for the year tag */
 }
 
 .card-word {
@@ -142,9 +144,15 @@ header h1 {
 
 .card-year {
     font-size: 0.85em; /* Smaller font for year */
-    color: #777;
-    text-align: right; /* Align year to the right */
-    margin-top: auto; /* Pushes year to the bottom if content varies */
+    color: #555; /* Muted color for the year text */
+    background-color: rgba(53, 104, 84, 0.1); /* Light green background for the tag */
+    padding: 4px 8px; /* Padding around the year text */
+    border-radius: 4px; /* Rounded corners for the tag */
+    position: absolute; /* Position the year absolutely */
+    bottom: 10px; /* Distance from the bottom of card-content */
+    right: 15px; /* Distance from the right of card-content (matches padding) */
+    margin: 0; /* Remove default margins */
+    z-index: 1; /* Ensure tag is above other content if needed */
 }
 
 /* Styling for couplet cards - optional, can add visual cues */
