@@ -1,8 +1,8 @@
 const etymologyData = [
     { word: "Ampersand", story: "Contraction of and per se and, meaning the character '&' by itself is 'and'. The symbol is based on the Latin word et \"and,\" and comes from an old Roman system of shorthand signs (ligatures)", year: "1797", category: [], imageUrl: "" },
-    { word: "Ammonia", story: "the gas obtained from sal ammoniac, salt deposits containing ammonium chloride found near temple of Jupiter Ammon in Libya", year: "", category: [], imageUrl: "" },
-    { word: "Bikini", story: "Named after Bikini Atoll, an island where an atom bomb was exploded in 1946 (because of the supposed ‘explosive’ effect the garment would create).", year: "", category: ["proper-noun"], imageUrl: "" },
-    { word: "Clue", story: "Revised spelling off clew (a ball of thread or yarn); Given by Ariadne to Theseus to use as a guide out of the Labyrinth in Greek mythology", year: "", category: [], imageUrl: "" },
+    { word: "Ammonia", story: "the gas obtained from sal ammoniac, salt deposits containing ammonium chloride found near temple of Jupiter Ammon in Libya", year: "1700s", category: ["proper-noun"], imageUrl: "https://images.nypl.org/index.php?id=81583&t=w" },
+    { word: "Bikini", story: "Named after Bikini Atoll, an island where an atom bomb was exploded in 1946 (because of the supposed ‘explosive’ effect the garment would create).", year: "1946", category: ["proper-noun"], imageUrl: "" },
+    { word: "Clue", story: "Revised spelling off clew (a ball of thread or yarn); Given by Ariadne to Theseus to use as a guide out of the Labyrinth in Greek mythology", year: "1590s", category: [], imageUrl: "" },
     { word: "Curfew", story: "From cuevre, imperative of covrir (to cover) + feu (fire); The medieval practice of ringing a bell as an order to bank the hearths and prepare for sleep was to prevent conflagrations from untended fires.", year: "1300s", category: [], imageUrl: "" },
     { word: "Jinx", story: "Probably a variant of jynx ‘wryneck’ because the bird was used in witchcraft.", year: "1690s", category: [], imageUrl: "" },
     { word: "Hamburger", story: "Food stands along the New York City harbour served “steak cooked in the Hamburg style” to attract German sailors to American ports.", year: "1700s", category: ["proper-noun", "food"], imageUrl: "" }, // Category is now an array
