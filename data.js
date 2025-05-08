@@ -83,9 +83,6 @@ const etymologyData = [
     { word: "Sandwich", story: "Earl of Sandwich, who was said to be a gambler who ate thin slices of cold meat between bread at the gaming table during marathon sessions rather than rising for a proper meal",
      year: "", category: "proper-noun", imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/John_Montagu%2C_4th_Earl_of_Sandwich.jpg/1024px-John_Montagu%2C_4th_Earl_of_Sandwich.jpg" },
     
-    { word: "Nachos", story: "Restaurant cook Ignacio Anaya, who invented the dish in the Mexican border town of Piedras Negras in 1943.",
-     year: "1943", category: "proper-noun", imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Ignacio_Anaya_Inventor_of_Nachos.jpg/1280px-Ignacio_Anaya_Inventor_of_Nachos.jpg" },
-    
     { word: "Volcano", story: "From Latin Vulcanus \"Vulcan,\" Roman god of fire",
      year: "", category: "proper-noun", imageUrl: "https://api.nga.gov/iiif/47133e8d-e227-4e32-a69c-8a62775b2c72/full/!800,800/0/default.jpg" }
 ];
