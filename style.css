@@ -1,0 +1,69 @@
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1 {
+    color: #356854;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.filters {
+    margin-bottom: 20px;
+}
+
+.filters label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+#category-filter {
+    padding: 5px;
+    font-size: 1rem;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Ensure left alignment for table content */
+}
+
+th, td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+    text-align: left; /* Ensure left alignment for table content */
+}
+
+th {
+    background-color: #356854;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: left; /* Ensure left alignment for headers */
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #e9e9e9;
+}
+
+/* Ensure text is readable and well-spaced */
+td {
+    font-size: 1.1rem;
+    word-wrap: break-word;
+}
+
+/* Optional: Adjust column widths if needed */
+/*
+td:nth-child(1) { width: 15%; }
+td:nth-child(2) { width: 70%; }
+td:nth-child(3) { width: 15%; }
+*/
