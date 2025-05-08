@@ -2,9 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const cardContainer = document.getElementById('etymology-card-container');
     const categoryCheckboxes = document.querySelectorAll('.filters input[name="category"]');
     const searchInput = document.getElementById('search-input');
-    const filterAllCheckbox = document.getElementById('filter-all');
+    // Removed filterAllCheckbox
     const sortBySelect = document.getElementById('sort-by');
-    const sortDescendingCheckbox = document.getElementById('sort-descending');
+    // Removed sortDescendingCheckbox
 
     function renderCards(dataToRender) {
         cardContainer.innerHTML = ''; // Clear current cards
@@ -37,11 +37,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function filterAndSortData() {
         const searchTerm = searchInput.value.toLowerCase();
         const selectedCategories = Array.from(categoryCheckboxes)
-            .filter(checkbox => checkbox.checked && checkbox.value !== 'all')
+            .filter(checkbox => checkbox.checked) // No need to check value !== 'all' anymore
             .map(checkbox => checkbox.value);
 
         const sortBy = sortBySelect.value;
-        const sortDescending = sortDescendingCheckbox.checked;
+        // Removed sortDescending
 
 
         let filteredData = etymologyData;
@@ -50,11 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (selectedCategories.length > 0) {
              filteredData = etymologyData.filter(item =>
                 // Assuming item.category is an array and checking if any selected category is in it
-                item.category && selectedCategories.some(category => item.category.includes(category))
+                Array.isArray(item.category) && selectedCategories.some(category => item.category.includes(category))
              );
-        } else if (!filterAllCheckbox.checked) {
-            filteredData = [];
         }
+        // If no specific categories are selected, the filter is not applied, effectively showing all (subject to search)
+
 
         // Apply search filter
         if (searchTerm) {
@@ -72,18 +72,18 @@ document.addEventListener('DOMContentLoaded', () => {
             filteredData.sort((a, b) => {
                 const wordA = a.word.toLowerCase();
                 const wordB = b.word.toLowerCase();
-                if (wordA < wordB) return sortDescending ? 1 : -1;
-                if (wordA > wordB) return sortDescending ? -1 : 1;
+                if (wordA < wordB) return -1; // Always Ascending
+                if (wordA > wordB) return 1; // Always Ascending
                 return 0;
             });
         } else if (sortBy === 'year') {
-             // Custom sort for years, handling potential non-numeric values and 's'
+             // Custom sort for years (Ascending)
              filteredData.sort((a, b) => {
                  const yearA = parseYear(a.year);
                  const yearB = parseYear(b.year);
 
-                 if (yearA < yearB) return sortDescending ? 1 : -1;
-                 if (yearA > yearB) return sortDescending ? -1 : 1;
+                 if (yearA < yearB) return -1; // Always Ascending
+                 if (yearA > yearB) return 1; // Always Ascending
                  return 0;
              });
         }
@@ -96,47 +96,25 @@ document.addEventListener('DOMContentLoaded', () => {
     function parseYear(yearString) {
         if (!yearString) return 0; // Treat empty years as very old (or you could treat as very new)
         // Extract leading digits for sorting
-        const yearMatch = yearString.match(/^\d+/);
+        const yearMatch = String(yearString).match(/^\d+/);
         return yearMatch ? parseInt(yearMatch[0]) : 0;
     }
 
 
-     // Handle "All" checkbox logic
-    filterAllCheckbox.addEventListener('change', () => {
-        if (filterAllCheckbox.checked) {
-            categoryCheckboxes.forEach(checkbox => {
-                if (checkbox.value !== 'all') {
-                    checkbox.checked = false;
-                }
-            });
-        } else {
-             if (Array.from(categoryCheckboxes).filter(cb => cb.checked && cb.value !== 'all').length === 0) {
-                 filterAllCheckbox.checked = true;
-             }
-        }
-        filterAndSortData();
-    });
+     // Removed "All" checkbox event listener logic
 
     categoryCheckboxes.forEach(checkbox => {
-        if (checkbox.value !== 'all') {
-            checkbox.addEventListener('change', () => {
-                if (checkbox.checked) {
-                    filterAllCheckbox.checked = false;
-                } else {
-                    if (Array.from(categoryCheckboxes).filter(cb => cb.checked && cb.value !== 'all').length === 0) {
-                         filterAllCheckbox.checked = true;
-                    }
-                }
-                filterAndSortData();
-            });
-        }
+        // No need for special handling for the 'all' checkbox anymore
+        checkbox.addEventListener('change', () => {
+             filterAndSortData();
+        });
     });
 
 
     // Add event listeners for filtering and sorting
     searchInput.addEventListener('input', filterAndSortData);
     sortBySelect.addEventListener('change', filterAndSortData);
-    sortDescendingCheckbox.addEventListener('change', filterAndSortData);
+    // Removed event listener for sortDescendingCheckbox
 
 
     // Initial render
