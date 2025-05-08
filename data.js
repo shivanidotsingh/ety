@@ -39,11 +39,11 @@ const etymologyData = [
     { word: "Gargle", story: "With Gargoyle. Old French gargole (throat).", year: "1527", category: ["couplet"], coupletId: "gargoyle-gargle", imageUrl: "" },
 
     // Proper Nouns
-    { word: "Bougainvillaea", story: "French navigator Louis Bougainville posthumously in 1849.", year: "1849", category: ["proper-noun"], imageUrl: "" },
+    { word: "Bougainvillaea", story: "French navigator Louis Bougainville posthumously.", year: "1849", category: ["proper-noun"], imageUrl: "" },
     { word: "Dunce", story: "Follower of John Duns Scotus. Term used for those rejecting new knowledge by 1530.", year: "1530", category: ["proper-noun"], imageUrl: "" },
     { word: "Luddite", story: "Name taken by weavers who destroyed machinery, from Ned Ludd. Name occurs in writings by 1811.", year: "1811", category: ["proper-noun"], imageUrl: "" },
-    { word: "Sadism", story: "From Count Donatien A.F. de Sade. Term coined in 1886.", year: "1886", category: ["proper-noun"], imageUrl: "" },
-    { word: "Masochism", story: "From Leopold von Sacher-Masoch. Term coined in 1886.", year: "1886", category: ["proper-noun"], imageUrl: "" },
-    { word: "Sandwich", story: "Named after the Earl of Sandwich, who ate meat between bread while gambling.", year: "", category: ["proper-noun", "food"], imageUrl: "" }
+    { word: "Sadism", story: "From French sadisme, from the name of Count Donatien A.F. de Sade (1740-1815) who was notorious for the cruel sexual practices described in his novels.", year: "1888", category: ["proper-noun"], imageUrl: "" },
+    { word: "Masochism", story: "From German Masochismus, coined by German neurologist Richard von Krafft-Ebing from name of Leopold von Sacher-Masoch (1836-1895), Austrian utopian socialist novelist who enshrined his submissive sexuality in 'Venus in Furs'.", year: "1883", category: ["proper-noun"], imageUrl: "" },
+    { word: "Sandwich", story: "Named after the Earl of Sandwich, who ate meat between bread while gambling.", year: "1762", category: ["proper-noun", "food"], imageUrl: "" }
     
 ];
