@@ -9,9 +9,9 @@
 <body>
 
     <header>
+        <h1>Word Etymologies</h1>
         <p class="site-description">
-        origins and histories of words, that <a href="https://singh.work" target="_blank">shivi</a> finds fascinating. 
-
+             origins and histories of words, that <a href="https://singh.work" target="_blank">shivi</a> finds fascinating. 
         </p>
     </header>
 
@@ -24,7 +24,7 @@
         <div class="filters">
             <span>Filter by Category:</span>
             <label>
-                <input type="checkbox" name="category" value="couplet"> Unlikely couples
+                <input type="checkbox" name="category" value="couplet"> Unlikely Couples
             </label>
             <label>
                 <input type="checkbox" name="category" value="proper-noun"> Proper Nouns
@@ -33,7 +33,22 @@
                 <input type="checkbox" name="category" value="folk-etymology"> Folk Etymologies
             </label>
              <label>
+                <input type="checkbox" name="category" value="food"> Food Words
+            </label>
+             <label>
                 <input type="checkbox" name="category" value="all" id="filter-all" checked> All
+            </label>
+        </div>
+
+        <div class="sort-controls">
+            <span>Sort by:</span>
+            <select id="sort-by">
+                <option value="random">Random</option>
+                <option value="word">Alphabetical</option>
+                <option value="year">Timeline</option>
+            </select>
+            <label>
+                <input type="checkbox" id="sort-descending"> Descending
             </label>
         </div>
     </div>
