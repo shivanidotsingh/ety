@@ -4,69 +4,119 @@ body {
     margin: 0; /* Remove default body margin */
     background-color: #f4f4f4; /* Light background */
     color: #333;
-    padding: 20px; /* Add some padding around the content */
+    padding: 0; /* Remove body padding, handled by header and main content padding */
     -webkit-font-smoothing: antialiased; /* Improve font rendering */
     -moz-osx-font-smoothing: grayscale;
 }
 
-h1 {
-    color: #356854; /* Dark teal/green color */
+header {
+    background-color: #fff; /* White background for header */
+    padding: 40px 20px; /* Increased padding for the header */
+    border-bottom: 1px solid #ddd; /* Subtle border at the bottom of header */
     text-align: left;
-    margin-bottom: 20px;
-    font-size: 2em; /* Adjust heading size */
 }
+
+header h1 {
+    color: #356854; /* Dark teal/green color */
+    margin-bottom: 5px; /* Reduced bottom margin for heading */
+    font-size: 2.5em; /* Larger heading size */
+}
+
+.site-description {
+    font-size: 1.1em; /* Font size for the description */
+    color: #555; /* Slightly muted text color */
+    margin-top: 0; /* Remove default paragraph top margin */
+    margin-bottom: 0; /* Remove bottom margin */
+    line-height: 1.4; /* Adjust line height for description */
+}
+
 
 .controls {
     margin-bottom: 20px;
-    padding: 0 15px; /* Align controls padding with table content */
+    padding: 20px 20px 0 20px; /* Padding for the controls section (top, right, bottom, left) */
     display: flex; /* Use flexbox for layout */
     flex-wrap: wrap; /* Allow items to wrap on smaller screens */
     gap: 20px; /* Space between search and filters */
     align-items: center; /* Vertically align items */
 }
 
-.search-bar label,
-.filters span {
+.search-bar {
+    flex-grow: 1; /* Allow search bar to take up available space */
+    max-width: 100%; /* Ensure it doesn't exceed container width */
+    background-color: rgba(53, 104, 84, 0.1); /* Light green background */
+    border: 1px solid #356854; /* Green border */
+    border-radius: 4px;
+    padding: 8px 15px; /* Padding inside the search bar */
+    display: flex; /* Use flexbox to align label and input */
+    align-items: center;
+}
+
+.search-bar label {
     font-weight: bold;
     margin-right: 10px;
-    color: #356854; /* Green color for labels */
+    color: #356854; /* Green color for label */
 }
 
 .search-bar input[type="text"] {
-    padding: 8px 12px;
+    flex-grow: 1; /* Allow input to fill remaining space */
+    padding: 5px 0; /* Adjust padding */
     font-size: 0.9rem; /* Smaller font size */
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #fff;
+    border: none; /* Remove input default border */
+    background-color: transparent; /* Transparent background for input */
+    outline: none; /* Remove outline on focus */
+    color: #333;
 }
 
-.filters label {
-    margin-right: 15px; /* Space between checkboxes */
-    font-size: 0.9rem; /* Smaller font size */
+.filters {
+    display: flex; /* Use flexbox for filters */
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px; /* Space between filter items */
+    font-size: 0.9rem; /* Smaller font size for filters */
 }
+
+.filters span {
+    font-weight: bold;
+    color: #356854; /* Green color for label */
+}
+
 
 table {
     border-collapse: collapse;
-    width: 100%;
+    width: calc(100% - 40px); /* Table width reduced by padding on either side */
+    margin: 0 20px 20px 20px; /* Center table and add margin */
     background-color: #fff; /* White background for table */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: left;
     border: 1px solid #356854; /* Border color from the example's theme */
-    margin-top: 20px; /* Space above the table */
     border-radius: 4px; /* Slightly rounded corners */
     overflow: hidden; /* Hide overflowing borders due to border-radius */
 }
 
+/* To make the table edge-to-edge within the body padding: */
+table {
+    width: 100%; /* Make table fill the width of its container */
+    margin: 0 0 20px 0; /* Remove horizontal margins, keep bottom margin */
+    border-radius: 0; /* Remove border-radius if going truly edge-to-edge */
+    border-left: none; /* Remove left border */
+    border-right: none; /* Remove right border */
+    box-shadow: none; /* Remove box shadow if desired for a flatter look */
+}
+
+/* Adjust padding on th and td to create internal spacing when table is edge-to-edge */
+th, td {
+    padding: 10px 20px; /* Increased horizontal padding */
+}
+
+header, .controls {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
 thead tr {
     background-color: #356854; /* Header background color */
     color: #ffffff; /* Header text color */
-}
-
-th, td {
-    padding: 10px 15px; /* Adjusted padding */
-    border-bottom: 1px solid #ddd; /* Lighter border for rows */
-    text-align: left;
-    font-size: 0.95rem; /* Slightly smaller font size for table data */
 }
 
 th {
@@ -81,6 +131,9 @@ th {
     width: 50px; /* Fixed width for the index column */
     text-align: center; /* Center the index number */
     font-weight: normal; /* Non-bold index number */
+    color: #356854; /* Green color for index number */
+    padding-left: 10px; /* Adjust padding for the index column */
+    padding-right: 10px; /* Adjust padding for the index column */
 }
 
 
@@ -96,7 +149,7 @@ tbody tr {
 
 /* Style for grouped couplet row when ONLY couplets are filtered */
 .couplet-group td {
-    background-color: #e0f2f1; /* Light background for couplet groups */
+    background-color: #e0f2f1; /* Light background for couplet groups (slightly different shade) */
     border-bottom: 2px solid #356854; /* Thicker border below the group */
 }
 
