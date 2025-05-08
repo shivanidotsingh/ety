@@ -21,7 +21,7 @@ const etymologyData = [
     { word: "Vernacular", story: "From verna (slave born in the master's house)", year: "", category: "", imageUrl: "" },
     { word: "Vulgar", story: "From Latin vulgaris, from vulgus (common people)", year: "", category: "", imageUrl: "" },
 
-    // Couplets broken out
+    // Couplets
     { word: "Helicopter", story: "Greek: helico (spiral) + pter (one with wings)", year: "", category: "couplet", coupletId: "helicopter-pterodactyl", imageUrl: "" },
     { word: "Pterodactyl", story: "An extinct flying reptile: pter (one with wings) + dactylos (finger)", year: "", category: "couplet", coupletId: "helicopter-pterodactyl", imageUrl: "" },
     { word: "Pomegranate", story: "In Latin pomum granatum is an \"apple with many seeds.", year: "", category: "couplet", coupletId: "pomegranate-grenade", imageUrl: "" },
@@ -38,12 +38,19 @@ const etymologyData = [
     { word: "Gargle", story: "From Old French gargole, gargoule (throat); perhaps from garg- (imitative of throat sounds) + goule, dialect word for \"mouth,\" from Latin gula (throat)", year: "", category: "couplet", coupletId: "gargoyle-gargle", imageUrl: "" },
 
     // Proper Nouns
-    { word: "Bougainvillaea", story: "French navigator Louis Bougainville posthumously in 1849", year: "", category: "proper-noun", imageUrl: "" },
-    { word: "Dunce", story: "follower of John Duns Scotus (c. 1265-1308), Scottish scholar of philosophy and theology; By 1520s, humanist reaction against medieval theology had singled him out as the type of the hairsplitting scholastic and it became a general term applied to obstinate philosophical opponents", year: "", category: "proper-noun", imageUrl: "" },
-    { word: "Luddite", story: "The name taken by an organized band of weavers in Midlands and northern England who for about 5 years thereafter destroyed machinery, for fear it would deprive them of work. Supposedly they got it from Ned Ludd, a Leicestershire worker who in 1779 had smashed two machines in a rage", year: "", category: "proper-noun", imageUrl: "" },
-    { word: "Sadism", story: "From Count Donatien A.F. de Sade (1740-1815). He was notorious for the cruel sexual practices described in his novels.", year: "", category: "proper-noun", imageUrl: "" },
-    { word: "Masochism", story: "From Leopold von Sacher-Masoch (1836-1895), Austrian utopian socialist novelist who enshrined his submissive sexuality in \"Venus in Furs\" (1869)", year: "", category: "proper-noun", imageUrl: "" },
-    { word: "Sandwich", story: "Earl of Sandwich, who was said to be a gambler who ate thin slices of cold meat between bread at the gaming table during marathon sessions rather than rising for a proper meal", year: "", category: "proper-noun", imageUrl: "" },
-    { word: "Nachos", story: "Restaurant cook Ignacio Anaya, who invented the dish in the Mexican border town of Piedras Negras in 1943.", year: "1943", category: "proper-noun", imageUrl: "" },
-    { word: "Volcano", story: "From Latin Vulcanus \"Vulcan,\" Roman god of fire", year: "", category: "proper-noun", imageUrl: "" }
+    { word: "Bougainvillaea", story: "French navigator Louis Bougainville posthumously in 1849", year: "", category: "proper-noun", imageUrl: "https://upload.wikimedia.org/wikipedia/commons/1/1f/Ducreux_-_Louis_Antoine_de_Bougainville.jpg" },
+    { word: "Dunce", story: "follower of John Duns Scotus (c. 1265-1308), Scottish scholar of philosophy and theology; By 1520s, humanist reaction against medieval theology had singled him out as the type of the hairsplitting scholastic and it became a general term applied to obstinate philosophical opponents",
+     year: "", category: "proper-noun", imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Scoto_%28Duns_Scoto%29.jpg/1024px-Scoto_%28Duns_Scoto%29.jpg" },
+    { word: "Luddite", story: "The name taken by an organized band of weavers in Midlands and northern England who for about 5 years thereafter destroyed machinery, for fear it would deprive them of work. Supposedly they got it from Ned Ludd, a Leicestershire worker who in 1779 had smashed two machines in a rage",
+     year: "", category: "proper-noun", imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Luddite.jpg/1280px-Luddite.jpg" },
+    { word: "Sadism", story: "From Count Donatien A.F. de Sade (1740-1815). He was notorious for the cruel sexual practices described in his novels.",
+     year: "", category: "proper-noun", imageUrl: "https://cdn.britannica.com/58/66758-050-7A02462F/Marquis-de-Sade.jpg" },
+    { word: "Masochism", story: "From Leopold von Sacher-Masoch (1836-1895), Austrian utopian socialist novelist who enshrined his submissive sexuality in \"Venus in Furs\" (1869)",
+     year: "", category: "proper-noun", imageUrl: "https://upload.wikimedia.org/wikipedia/commons/7/72/Leopold_von_Sacher-Masoch%2C_portrait_3.jpg" },
+    { word: "Sandwich", story: "Earl of Sandwich, who was said to be a gambler who ate thin slices of cold meat between bread at the gaming table during marathon sessions rather than rising for a proper meal",
+     year: "", category: "proper-noun", imageUrl: "" },
+    { word: "Nachos", story: "Restaurant cook Ignacio Anaya, who invented the dish in the Mexican border town of Piedras Negras in 1943.",
+     year: "1943", category: "proper-noun", imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Ignacio_Anaya_Inventor_of_Nachos.jpg/1280px-Ignacio_Anaya_Inventor_of_Nachos.jpg" },
+    { word: "Volcano", story: "From Latin Vulcanus \"Vulcan,\" Roman god of fire",
+     year: "", category: "proper-noun", imageUrl: "https://api.nga.gov/iiif/47133e8d-e227-4e32-a69c-8a62775b2c72/full/!800,800/0/default.jpg" }
 ];
