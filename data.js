@@ -13,7 +13,7 @@ const etymologyData = [
     { word: "Muscle", story: "From Latin musculus (little mouse); Shape/movement of some muscles thought to resemble mice.", year: "1300s", category: [], imageUrl: "" },
     { word: "Nickname", story: "From Middle English nekename, alteration of earlier ekename (additional name).", year: "1303", category: [], imageUrl: "" },
     { word: "Pupil", story: "From Latin pūpilla (pupil, little girl); Named for small reflected image in the eye.", year: "", category: [], imageUrl: "" },
-    { word: "Sabotage", story: "From French saboter (to walk noisily, from sabot 'wooden shoe'); Reference to labor disputes.", year: "1903", category: [], imageUrl: "https://jeparleamericain.com/wp-content/uploads/2012/06/nativegirlsmarkenislandholland1890-19002.png?w=1296" },
+    { word: "Sabotage", story: "From French saboter (to walk noisily, from sabot 'wooden shoe'); Reference to labor disputes.", year: "1903", category: [], imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Henry_Ossawa_Tanner_-_The_Young_Sabot_Maker_-_Google_Art_Project.jpg/1280px-Henry_Ossawa_Tanner_-_The_Young_Sabot_Maker_-_Google_Art_Project.jpg" },
     { word: "Sabbatical", story: "From Greek sabbatikos (of the Sabbath), a term perhaps suggested by the sabbatical year in Mosaic law — the seventh year — in which land was to remain untilled and non-foreign debtors and slaves released.", year: "1590s", category: [], imageUrl: "" },
     { word: "Serendipity", story: "The Three Princes of Serendip is the English version of the Italian translation of the Persian fairy tale, adapted from Book One of Amir Khusrau's Hasht-Bihisht of 1302. Serendip is the Classical Persian name for Sri Lanka (Ceylon). The story is the source of the word serendipity, coined by Horace Walpole because of his recollection of the part of the 'silly fairy tale' in which the three princes by 'accidents and sagacity' discern the nature of a lost camel.", year: "1754", category: ["proper-noun"], imageUrl: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Seven_pavilions.jpg" },
     { word: "Sinister", story: "From Latin sinister (left, on the left side) opposite of dexter.", year: "", category: [], imageUrl: "" },
@@ -23,11 +23,11 @@ const etymologyData = [
     { word: "Volcano", story: "From Latin Vulcanus, Roman god of fire.", year: "", category: ["proper-noun"], imageUrl: "https://api.nga.gov/iiif/47133e8d-e227-4e32-a69c-8a62775b2c72/full/!800,800/0/default.jpg" },
 
     // Unlikely Couples
-    { word: "Helicopter", story: "With Pterodactyl. Greek: helico (spiral) + pter (one with wings). Adopted from French 1861.", year: "1861", category: ["couplet"], coupletId: "helicopter-pterodactyl", imageUrl: "" },
+    { word: "Helicopter", story: "With Pterodactyl. Greek: helico (spiral) + pter (one with wings).", year: "1861", category: ["couplet"], coupletId: "helicopter-pterodactyl", imageUrl: "" },
     { word: "Pterodactyl", story: "With Helicopter. An extinct flying reptile: pter (one with wings) + dactylos (finger).", year: "", category: ["couplet"], coupletId: "helicopter-pterodactyl", imageUrl: "" },
     { word: "Pomegranate", story: "With Grenade. Latin pomum granatum 'apple with many seeds'.", year: "", category: ["couplet", "food"], coupletId: "pomegranate-grenade", imageUrl: "" },
-    { word: "Grenade", story: "With Pomegranate. Weapon named as it resembled the fruit. First English use 1590s.", year: "1590s", category: ["couplet", "food"], coupletId: "pomegranate-grenade", imageUrl: "" },
-    { word: "Orchids", story: "With Avocado. Greek órchis (testicle); Describes appearance of plant's tubers. Term 'orchid' introduced 1845.", year: "1845", category: ["couplet"], coupletId: "orchids-avocado", imageUrl: "" },
+    { word: "Grenade", story: "With Pomegranate. Weapon named as it resembled the fruit.", year: "1590s", category: ["couplet", "food"], coupletId: "pomegranate-grenade", imageUrl: "" },
+    { word: "Orchids", story: "With Avocado. Greek órchis (testicle); Describes appearance of plant's tubers.", year: "1845", category: ["couplet"], coupletId: "orchids-avocado", imageUrl: "" },
     { word: "Avocado", story: "With Orchids. Spanish from Nahuatl meaning testicle.", year: "1764", category: ["couplet", "food"], coupletId: "orchids-avocado", imageUrl: "" },
     { word: "Fungus", story: "With Sponge. From Greek sphongos (sponge) the Attic form of spongos.", year: "1527", category: ["couplet"], coupletId: "fungus-sponge", imageUrl: "" },
     { word: "Sponge", story: "With Fungus. From Greek sphongos (sponge).", year: "", category: ["couplet"], coupletId: "fungus-sponge", imageUrl: "" },
