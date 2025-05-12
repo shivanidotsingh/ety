@@ -225,6 +225,7 @@ header {
     display: flex; /* Use flexbox for inner layout */
     flex-direction: row; /* Arrange children side-by-side */
     gap: 20px; /* Space between image and text content */
+    align-items: stretch; /* Make flex items (image/text containers) stretch to fill the container height */
 }
 
 /* Style for the image container within the modal */
@@ -232,14 +233,18 @@ header {
     flex: 1; /* Allow image container to grow */
     max-width: 40%; /* Set max width for image container (adjust ratio here) */
     text-align: center;
+    display: flex; /* Use flexbox to align image inside */
+    align-items: flex-start; /* Align image to the top of its container */
 }
 
 #modal-image {
     max-width: 100%;
-    height: auto;
+    height: 100%; /* Make image try to fill the height of its container */
+    object-fit: contain; /* Use contain to show the full image, adjust if cropping is preferred */
+    object-position: top; /* Align the image to the top */
     border-radius: 8px;
     display: block; /* Remove extra space below image */
-    margin: 0 auto; /* Center image if it's smaller than its container */
+    margin: 0 auto; /* Center image if it's narrower than its container */
 }
 
 /* Style for the text content container within the modal */
@@ -299,6 +304,7 @@ header {
     .modal-image-container {
         max-width: 100%; /* Image takes full width */
         margin-bottom: 15px;
+         align-items: center; /* Center image on smaller screens */
     }
 
     .modal-text-content {
