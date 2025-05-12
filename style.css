@@ -16,7 +16,6 @@ header {
     text-align: left;
 }
 
-
 .site-description {
     font-size: 1.1em;
     color: #555;
@@ -212,17 +211,43 @@ header {
     opacity: 1;
 }
 
-/* Modal Content */
+/* Modal Content - Smaller and Landscape */
 .modal-content {
     background-color: #fff;
-    padding: 30px;
+    padding: 20px; /* Reduced padding */
     border-radius: 8px;
-    max-width: 80%; /* Maximum width of the modal content */
-    max-height: 90%; /* Maximum height of the modal content */
-    overflow-y: auto; /* Enable scrolling for long content */
+    width: 75vw; /* Set width relative to viewport width */
+    max-width: 800px; /* Max width to prevent it from getting too large on very wide screens */
+    max-height: 80vh; /* Max height relative to viewport height */
+    overflow-y: auto; /* Enable scrolling for overall content if needed */
     position: relative;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    display: flex; /* Use flexbox for inner layout */
+    flex-direction: row; /* Arrange children side-by-side */
+    gap: 20px; /* Space between image and text content */
 }
+
+/* Style for the image container within the modal */
+.modal-image-container {
+    flex: 1; /* Allow image container to grow */
+    max-width: 40%; /* Set max width for image container (adjust ratio here) */
+    text-align: center;
+}
+
+#modal-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block; /* Remove extra space below image */
+    margin: 0 auto; /* Center image if it's smaller than its container */
+}
+
+/* Style for the text content container within the modal */
+.modal-text-content {
+    flex: 2; /* Allow text container to grow more */
+    overflow-y: auto; /* Enable scrolling for text content if it overflows */
+}
+
 
 .modal-close {
     position: absolute;
@@ -234,32 +259,23 @@ header {
     background: none;
     border: none;
     cursor: pointer;
+    z-index: 10; /* Ensure close button is above other content */
 }
 
 .modal-close:hover {
     color: #777;
 }
 
-.modal-image-container {
-    text-align: center; /* Center the image */
-    margin-bottom: 20px;
-}
-
-#modal-image {
-    max-width: 100%; /* Ensure image fits within modal */
-    height: auto;
-    border-radius: 8px;
-}
 
 #modal-word {
-    font-size: 1.8em;
+    font-size: 1.6em; /* Slightly smaller font size for modal word */
     color: #356854;
     margin-top: 0;
     margin-bottom: 10px;
 }
 
 #modal-story {
-    font-size: 1.1em;
+    font-size: 1em; /* Adjusted font size */
     color: #555;
     line-height: 1.6;
     white-space: pre-wrap;
@@ -267,7 +283,30 @@ header {
 }
 
 #modal-year {
-    font-size: 1em;
+    font-size: 0.9em; /* Adjusted font size */
     color: #777;
     text-align: right;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .modal-content {
+        flex-direction: column; /* Stack image and text vertically on smaller screens */
+        width: 90vw; /* Increase width on smaller screens */
+        max-height: 90vh;
+    }
+
+    .modal-image-container {
+        max-width: 100%; /* Image takes full width */
+        margin-bottom: 15px;
+    }
+
+    .modal-text-content {
+        flex: auto; /* Reset flex growth */
+        overflow-y: visible; /* Allow body scrolling instead if needed */
+    }
+     #modal-image {
+         max-height: 30vh; /* Limit image height on smaller screens */
+         object-fit: contain; /* Contain image to show full image if needed */
+     }
 }
