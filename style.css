@@ -17,7 +17,7 @@ header {
 }
 
 .site-description {
-    font-size: 1.1em;
+    font-size: 0.9em;
     color: #555;
     margin-top: 0;
     margin-bottom: 0;
@@ -122,29 +122,17 @@ header {
 }
 
 .card-word {
-    font-size: 1.2em; /* Slightly smaller font for word */
+    font-size: 1.2em; 
     font-weight: bold;
-    color: #356854; /* Green color for the word */
+    color: #356854; 
     margin-top: 0;
-    margin-bottom: 8px; /* Reduced margin */
-    line-height: 1.2; /* Adjust line height for word */
-}
-
-/* Styling for the paired word tag (present in CSS but not used in script anymore) */
-.card-paired-word {
-    display: inline-block;
-    font-size: 0.8em;
-    color: #555;
-    background-color: rgba(53, 104, 84, 0.08);
-    padding: 3px 6px;
-    border-radius: 3px;
-    margin-bottom: 8px;
-    margin-top: -4px;
+    margin-bottom: 8px; 
+    line-height: 1.2; 
 }
 
 
 .card-story {
-    font-size: 0.95em; /* Slightly smaller font for story */
+    font-size: 0.8em; /* Slightly smaller font for story */
     margin-bottom: 8px; /* Reduced margin */
     color: #555;
     white-space: pre-wrap; /* Preserve line breaks in story */
@@ -154,7 +142,7 @@ header {
     color: #356854; /* Green color for "Read More" */
     cursor: pointer;
     text-decoration: underline;
-    font-size: 0.9em;
+    font-size: 0.8em;
 }
 
 .read-more:hover {
