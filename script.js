@@ -100,30 +100,34 @@ document.addEventListener('DOMContentLoaded', () => {
         // Optional stable order inside the pair
         items.sort((a, b) => a.word.localeCompare(b.word));
 
-        const back = buildCard(items[0]);
-        const front = buildCard(items[1]);
+        const cardA = buildCard(items[0]);
+        const cardB = buildCard(items[1]);
 
-        back.classList.add('is-back');
-        front.classList.add('is-front');
+        // Start with A in back, B in front
+        cardA.classList.add('is-back');
+        cardB.classList.add('is-front');
 
-        // ✅ Clicking the BACK card swaps positions ONLY (no modal)
-        back.addEventListener('click', (e) => {
-          e.stopPropagation();
+        function swapIfBack(clickedCard, otherCard) {
+          return (e) => {
+            e.stopPropagation();
 
-          back.classList.remove('is-back');
-          back.classList.add('is-front');
+            // only swap if you clicked the one that is currently in the back
+            if (!clickedCard.classList.contains('is-back')) return;
 
-          front.classList.remove('is-front');
-          front.classList.add('is-back');
-        });
+            clickedCard.classList.remove('is-back');
+            clickedCard.classList.add('is-front');
 
-        // ✅ Clicking the FRONT card does nothing (prevents any modal / weirdness)
-        front.addEventListener('click', (e) => {
-          e.stopPropagation();
-        });
+            otherCard.classList.remove('is-front');
+            otherCard.classList.add('is-back');
+          };
+        }
 
-        stack.appendChild(back);
-        stack.appendChild(front);
+        // ✅ Attach to BOTH cards so swapping can happen forever
+        cardA.addEventListener('click', swapIfBack(cardA, cardB));
+        cardB.addEventListener('click', swapIfBack(cardB, cardA));
+
+        stack.appendChild(cardA);
+        stack.appendChild(cardB);
         cardContainer.appendChild(stack);
       });
 
