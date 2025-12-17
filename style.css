@@ -219,109 +219,86 @@ header {
     grid-column: 1 / -1; /* Center "No results" across grid columns */
 }
 
-/* Modal Overlay */
+/* Modal Overlay (lighter + iOS-ish) */
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000; /* Ensure modal is on top of everything */
-    visibility: hidden; /* Hidden by default */
-    opacity: 0; /* Transparent by default */
-    transition: visibility 0.3s, opacity 0.3s; /* Smooth transition */
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.2s, opacity 0.2s;
 }
 
 .modal-overlay.visible {
-    visibility: visible;
-    opacity: 1;
+  visibility: visible;
+  opacity: 1;
 }
 
-/* Modal Content - Smaller and Landscape */
+/* Glass modal, same size always */
 .modal-content {
-    background-color: #fff;
-    padding: 20px; /* Reduced padding */
-    border-radius: 8px;
-    width: 75vw; /* Set width relative to viewport width */
-    max-width: 800px; /* Max width to prevent it from getting too large on very wide screens */
-    max-height: 80vh; /* Max height relative to viewport height */
-    overflow-y: auto; /* Enable scrolling for overall content if needed */
-    position: relative;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    display: flex; /* Use flexbox for inner layout */
-    flex-direction: row; /* Arrange children side-by-side */
-    gap: 20px; /* Space between image and text content */
-    align-items: stretch; /* Make flex items (image/text containers) stretch to fill the container height */
+  position: relative;
+  width: min(560px, 92vw);
+  max-height: 75vh;
+  overflow: auto;
+  padding: 22px 22px 18px;
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
 }
 
-/* Style for the image container within the modal */
-.modal-image-container {
-    flex: 1; /* Allow image container to grow */
-    max-width: 40%; /* Set max width for image container (adjust ratio here) */
-    text-align: center;
-    display: flex; /* Use flexbox to align image inside */
-    align-items: flex-start; /* Align image to the top of its container */
-}
-
-#modal-image {
-    max-width: 100%;
-    height: 100%; /* Make image try to fill the height of its container */
-    object-fit: contain; /* Use contain to show the full image, adjust if cropping is preferred */
-    object-position: top; /* Align the image to the top */
-    border-radius: 8px;
-    display: block; /* Remove extra space below image */
-    margin: 0 auto; /* Center image if it's narrower than its container */
-}
-
-/* Style for the text content container within the modal */
 .modal-text-content {
-    flex: 2; /* Allow text container to grow more */
-    overflow-y: auto; /* Enable scrolling for text content if it overflows */
+  padding-top: 6px;
 }
-
 
 .modal-close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #aaa;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 10; /* Ensure close button is above other content */
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 22px;
+  line-height: 1;
+  font-weight: 700;
+  color: rgba(0,0,0,0.45);
+  background: rgba(255,255,255,0.35);
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 10px;
+  padding: 6px 10px;
+  cursor: pointer;
 }
 
 .modal-close:hover {
-    color: #777;
+  opacity: 0.85;
 }
 
-
 #modal-word {
-    font-size: 1.6em; /* Slightly smaller font size for modal word */
-    color: #356854;
-    margin-top: 0;
-    margin-bottom: 10px;
+  font-size: 1.5em;
+  color: #356854;
+  margin: 0 0 10px 0;
 }
 
 #modal-story {
-    font-size: 1em; /* Adjusted font size */
-    color: #555;
-    line-height: 1.6;
-    white-space: pre-wrap;
-    margin-bottom: 15px;
+  font-size: 1em;
+  color: #333;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  margin: 0 0 14px 0;
 }
 
 #modal-year {
-    font-size: 0.9em; /* Adjusted font size */
-    color: #777;
-    text-align: right;
+  font-size: 0.9em;
+  color: rgba(0,0,0,0.55);
+  text-align: right;
+  margin: 0;
 }
+
 
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
