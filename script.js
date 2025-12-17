@@ -15,60 +15,124 @@ document.addEventListener('DOMContentLoaded', () => {
     const STORY_TRUNCATE_LIMIT = 250; // Define character limit for truncating stories
 
     function renderCards(dataToRender) {
-        cardContainer.innerHTML = ''; // Clear current cards
+  cardContainer.innerHTML = '';
 
-        if (dataToRender.length === 0) {
-            cardContainer.innerHTML = '<div class="no-results">No results found.</div>';
-            return;
-        }
+  if (dataToRender.length === 0) {
+    cardContainer.innerHTML = '<div class="no-results">No results found.</div>';
+    return;
+  }
 
-        dataToRender.forEach(item => {
-            const card = document.createElement('div');
-            card.classList.add('etymology-card');
+  // Is the "Unlikely Couples" filter active?
+  const coupletFilterOn = Array.from(categoryCheckboxes)
+    .some(cb => cb.checked && cb.value === 'couplet');
 
-            // Assuming item.category is an array
-             if (item.category && item.category.includes('couplet')) {
-                 card.classList.add('couplet'); // Add class for couplet styling
-             }
+  // Helper to build one card element (same as your current structure)
+  function buildCard(item) {
+    const card = document.createElement('div');
+    card.classList.add('etymology-card');
 
-            // Truncate story if it's long
-            const displayStory = item.story && item.story.length > STORY_TRUNCATE_LIMIT
-                ? item.story.substring(0, STORY_TRUNCATE_LIMIT) + '...'
-                : item.story;
-
-            const storyElement = document.createElement('p');
-            storyElement.classList.add('card-story');
-            storyElement.innerText = displayStory; // Use innerText to avoid rendering HTML tags in truncated story
-
-            if (item.story && item.story.length > STORY_TRUNCATE_LIMIT) {
-                const readMoreSpan = document.createElement('span');
-                readMoreSpan.classList.add('read-more');
-                readMoreSpan.innerText = ' Read More';
-                readMoreSpan.dataset.word = item.word; // Store word to easily find full data later
-                storyElement.appendChild(readMoreSpan);
-
-                // Add event listener to the "Read More" span
-                readMoreSpan.addEventListener('click', () => {
-                     showModal(item); // Pass the full item data to showModal
-                });
-            }
-
-
-            card.innerHTML = `
-                ${item.imageUrl ? `<img src="${item.imageUrl}" alt="Visual for ${item.word}" class="card-image">` : '<div class="card-image"></div>'}
-                <div class="card-content">
-                    <h3 class="card-word">${item.word}</h3>
-                    </div> `;
-            card.querySelector('.card-content').appendChild(storyElement); // Append story element
-             const yearElement = document.createElement('p');
-             yearElement.classList.add('card-year');
-             yearElement.innerText = item.year || '';
-             card.querySelector('.card-content').appendChild(yearElement); // Append year element
-
-
-            cardContainer.appendChild(card);
-        });
+    if (item.category && item.category.includes('couplet')) {
+      card.classList.add('couplet');
     }
+
+    const displayStory = item.story && item.story.length > STORY_TRUNCATE_LIMIT
+      ? item.story.substring(0, STORY_TRUNCATE_LIMIT) + '...'
+      : item.story;
+
+    const storyElement = document.createElement('p');
+    storyElement.classList.add('card-story');
+    storyElement.innerText = displayStory || '';
+
+    if (item.story && item.story.length > STORY_TRUNCATE_LIMIT) {
+      const readMoreSpan = document.createElement('span');
+      readMoreSpan.classList.add('read-more');
+      readMoreSpan.innerText = ' Read More';
+      storyElement.appendChild(readMoreSpan);
+
+      readMoreSpan.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showModal(item);
+      });
+    }
+
+    card.innerHTML = `
+      ${item.imageUrl ? `<img src="${item.imageUrl}" alt="Visual for ${item.word}" class="card-image">` : '<div class="card-image"></div>'}
+      <div class="card-content">
+        <h3 class="card-word">${item.word}</h3>
+      </div>
+    `;
+
+    const content = card.querySelector('.card-content');
+    content.appendChild(storyElement);
+
+    const yearElement = document.createElement('p');
+    yearElement.classList.add('card-year');
+    yearElement.innerText = item.year || '';
+    content.appendChild(yearElement);
+
+    // default: open modal when a card is clicked
+    card.addEventListener('click', () => showModal(item));
+
+    return card;
+  }
+
+  // If couplet filter is ON, render as stacks grouped by coupletId
+  if (coupletFilterOn) {
+    const groups = new Map();
+
+    dataToRender.forEach(item => {
+      const key = item.coupletId || item.word; // fallback
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(item);
+    });
+
+    groups.forEach(items => {
+      // only treat as a couplet stack if it really is a pair
+      if (items.length < 2) {
+        cardContainer.appendChild(buildCard(items[0]));
+        return;
+      }
+
+      const stack = document.createElement('div');
+      stack.classList.add('couplet-stack');
+
+      // Choose a stable order (optional): alphabetical inside pair
+      items.sort((a, b) => a.word.localeCompare(b.word));
+
+      const back = buildCard(items[0]);
+      const front = buildCard(items[1]);
+
+      back.classList.add('is-back');
+      front.classList.add('is-front');
+
+      // Click back card = bring to front (instead of immediately opening modal)
+      back.addEventListener('click', (e) => {
+        e.stopPropagation();
+        back.classList.add('bring-front');
+        front.classList.remove('bring-front');
+      });
+
+      // Click front card = ensure it's front (and open modal happens from buildCard)
+      front.addEventListener('click', (e) => {
+        // let modal open, but also make sure z-order feels right
+        back.classList.remove('bring-front');
+        front.classList.add('bring-front');
+      });
+
+      stack.appendChild(back);
+      stack.appendChild(front);
+      cardContainer.appendChild(stack);
+    });
+
+    return;
+  }
+
+  // Otherwise: normal grid rendering
+  dataToRender.forEach(item => {
+    cardContainer.appendChild(buildCard(item));
+  });
+}
+
 
     function filterAndSortData() {
         const searchTerm = searchInput.value.toLowerCase();
