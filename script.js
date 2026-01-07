@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const cardContainer = document.getElementById('etymology-card-container');
   const categoryCheckboxes = document.querySelectorAll('.filters input[name="category"]');
-  const searchInput = document.getElementById('search-input');
   const sortBySelect = document.getElementById('sort-by');
 
   const modalOverlay = document.getElementById('modal-overlay');
@@ -141,7 +140,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function filterAndSortData() {
-    const searchTerm = searchInput.value.toLowerCase();
     const selectedCategories = Array.from(categoryCheckboxes)
       .filter(checkbox => checkbox.checked)
       .map(checkbox => checkbox.value);
@@ -158,13 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
       );
     }
 
-    // Apply search filter
-    if (searchTerm) {
-      filteredData = filteredData.filter(item =>
-        item.word.toLowerCase().includes(searchTerm) ||
-        (item.story && item.story.toLowerCase().includes(searchTerm))
-      );
-    }
+
 
     // Apply Sorting Logic
     if (sortBy === 'random') {
@@ -221,7 +213,6 @@ document.addEventListener('DOMContentLoaded', () => {
     checkbox.addEventListener('change', filterAndSortData);
   });
 
-  searchInput.addEventListener('input', filterAndSortData);
   sortBySelect.addEventListener('change', filterAndSortData);
 
   filterAndSortData();
