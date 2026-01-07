@@ -33,33 +33,6 @@ header {
     align-items: center;
 }
 
-.search-bar {
-    flex-grow: 1;
-    max-width: 100%;
-    background-color: rgba(53, 104, 84, 0.1);
-    border: 1px solid #356854;
-    border-radius: 4px;
-    padding: 8px 15px;
-    display: flex;
-    align-items: center;
-}
-
-.search-bar label {
-    font-weight: bold;
-    margin-right: 10px;
-    color: #356854;
-}
-
-.search-bar input[type="text"] {
-    flex-grow: 1;
-    padding: 5px 0;
-    font-size: 0.9rem;
-    border: none;
-    background-color: transparent;
-    outline: none;
-    color: #333;
-}
-
 .filters,
 .sort-controls {
     display: flex;
