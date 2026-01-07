@@ -11,7 +11,7 @@ body {
 
 header {
     background-color: #fff;
-    padding: 40px 20px;
+    padding: 10px;
     border-bottom: 1px solid #ddd;
     text-align: left;
 }
@@ -184,7 +184,7 @@ header {
     color: #356854; /* Green color for "Read More" */
     cursor: pointer;
     text-decoration: underline;
-    font-size: 0.8em;
+    font-size: 0.9em;
 }
 
 .read-more:hover {
@@ -204,12 +204,6 @@ header {
     margin: 0; /* Remove default margins */
     z-index: 1; /* Ensure tag is above other content if needed */
 }
-
-/* Styling for couplet cards - optional, can add visual cues */
-.etymology-card.couplet {
-    border-left: 5px solid #356854; /* Highlight couplet cards */
-}
-
 
 .no-results {
     text-align: center;
